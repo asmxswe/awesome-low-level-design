@@ -1,10 +1,12 @@
 from typing import TYPE_CHECKING
+
 from item_states import AvailableState
 
 if TYPE_CHECKING:
     from member import Member
     from library_item import LibraryItem
     from item_states import ItemState
+
 
 class BookCopy:
     def __init__(self, copy_id: str, item: 'LibraryItem'):

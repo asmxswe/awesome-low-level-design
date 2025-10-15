@@ -1,10 +1,12 @@
-from enums import OrderType, TransactionType
-from user import User
-from stock import Stock
-from order import Order
-from execution_strategy import MarketOrderStrategy, LimitOrderStrategy
-from typing import Optional
 import uuid
+from typing import Optional
+
+from enums import OrderType, TransactionType
+from execution_strategy import MarketOrderStrategy, LimitOrderStrategy
+from order import Order
+from stock import Stock
+from user import User
+
 
 class OrderBuilder:
     def __init__(self):
@@ -44,7 +46,8 @@ class OrderBuilder:
         return self
 
     def build(self) -> Order:
-        execution_strategy = MarketOrderStrategy() if self.type == OrderType.MARKET else LimitOrderStrategy(self.transaction_type)
+        execution_strategy = MarketOrderStrategy() if self.type == OrderType.MARKET else LimitOrderStrategy(
+            self.transaction_type)
         return Order(
             str(uuid.uuid4()),
             self.user,

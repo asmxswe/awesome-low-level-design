@@ -1,5 +1,6 @@
 from .text_editor_memento import TextEditorMemento
 
+
 class TextEditor:
     def __init__(self):
         self.content = ""
@@ -17,4 +18,4 @@ class TextEditor:
 
     def restore(self, memento: TextEditorMemento) -> None:
         self.content = memento.state
-        print(f'Restored state to: "{self.content}"') 
+        print(f'Restored state to: "{self.content}"')

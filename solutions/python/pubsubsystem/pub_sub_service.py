@@ -1,9 +1,11 @@
 import threading
-from typing import Dict
-from topic import Topic
-from subscriber import Subscriber
-from message import Message
 from concurrent.futures import ThreadPoolExecutor
+from typing import Dict
+
+from message import Message
+from subscriber import Subscriber
+from topic import Topic
+
 
 class PubSubService:
     _instance = None
@@ -20,7 +22,7 @@ class PubSubService:
     def __init__(self):
         if self._initialized:
             return
-        
+
         self.topic_registry: Dict[str, Topic] = {}
         # A cached thread pool is suitable for handling many short-lived, bursty tasks (message deliveries).
         self.delivery_executor = ThreadPoolExecutor()

@@ -1,9 +1,11 @@
+import threading
 from typing import Dict, Optional
-from user import User
-from stock import Stock
+
 from order import Order
 from order_command import BuyStockCommand, SellStockCommand
-import threading
+from stock import Stock
+from user import User
+
 
 class StockBrokerageSystem:
     _instance: Optional['StockBrokerageSystem'] = None

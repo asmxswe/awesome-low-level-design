@@ -1,9 +1,11 @@
 from abc import ABC, abstractmethod
 
+
 class PaymentStrategy(ABC):
     @abstractmethod
     def pay(self, amount: float) -> bool:
         pass
+
 
 class UPIPaymentStrategy(PaymentStrategy):
     def __init__(self, upi_id: str):
@@ -12,6 +14,7 @@ class UPIPaymentStrategy(PaymentStrategy):
     def pay(self, amount: float) -> bool:
         print(f"Processing UPI payment of ${amount:.2f} with upi id {self.upi_id}.")
         return True
+
 
 class CreditCardPaymentStrategy(PaymentStrategy):
     def __init__(self, card_number: str):

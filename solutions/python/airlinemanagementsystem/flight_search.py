@@ -1,5 +1,3 @@
-from datetime import date
-
 class FlightSearch:
     def __init__(self, flights):
         self.flights = flights

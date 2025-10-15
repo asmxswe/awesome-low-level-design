@@ -1,5 +1,7 @@
 from typing import List
+
 from .file_system_item import FileSystemItem
+
 
 class Folder(FileSystemItem):
     def __init__(self, name: str):
@@ -19,4 +21,4 @@ class Folder(FileSystemItem):
         return total_size
 
     def __str__(self) -> str:
-        return f"Folder: {self.name} ({self.get_size()} bytes)" 
+        return f"Folder: {self.name} ({self.get_size()} bytes)"

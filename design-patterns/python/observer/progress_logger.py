@@ -3,7 +3,7 @@ from .fitness_data_observer import FitnessDataObserver
 
 class ProgressLogger(FitnessDataObserver):
     """Concrete Observer - logs fitness progress"""
-    
+
     def update(self, fitness_data) -> None:
         print(f"ProgressLogger: Logging fitness data - "
               f"Steps: {fitness_data.steps}, "

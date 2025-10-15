@@ -1,7 +1,9 @@
-from log_manager import LogManager
-from log_level import LogLevel
-from log_appender import ConsoleAppender
 import time
+
+from log_appender import ConsoleAppender
+from log_level import LogLevel
+from log_manager import LogManager
+
 
 class LoggingFrameworkDemo:
     @staticmethod
@@ -43,6 +45,7 @@ class LoggingFrameworkDemo:
             log_manager.shutdown()
         except Exception as e:
             print("Caught exception")
+
 
 if __name__ == "__main__":
     LoggingFrameworkDemo.main()

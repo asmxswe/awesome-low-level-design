@@ -1,5 +1,6 @@
 from .ui_component import UIComponent
 
+
 class Label(UIComponent):
     def __init__(self, mediator: 'UIMediator'):
         super().__init__(mediator)
@@ -11,4 +12,4 @@ class Label(UIComponent):
 
     @text.setter
     def text(self, value: str) -> None:
-        self._text = value 
+        self._text = value

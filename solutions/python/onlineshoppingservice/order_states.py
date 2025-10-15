@@ -1,9 +1,11 @@
 from abc import ABC, abstractmethod
-from enums import OrderStatus
 from typing import TYPE_CHECKING
+
+from enums import OrderStatus
 
 if TYPE_CHECKING:
     from order import Order
+
 
 class OrderState(ABC):
     @abstractmethod
@@ -17,6 +19,7 @@ class OrderState(ABC):
     @abstractmethod
     def cancel(self, order: 'Order') -> None:
         pass
+
 
 class PlacedState(OrderState):
     def ship(self, order: 'Order') -> None:
@@ -32,6 +35,7 @@ class PlacedState(OrderState):
         order.set_status(OrderStatus.CANCELLED)
         order.set_state(CancelledState())
 
+
 class ShippedState(OrderState):
     def ship(self, order: 'Order') -> None:
         print("Order is already shipped.")
@@ -44,6 +48,7 @@ class ShippedState(OrderState):
     def cancel(self, order: 'Order') -> None:
         print("Cannot cancel a shipped order.")
 
+
 class DeliveredState(OrderState):
     def ship(self, order: 'Order') -> None:
         print("Order already delivered.")
@@ -53,6 +58,7 @@ class DeliveredState(OrderState):
 
     def cancel(self, order: 'Order') -> None:
         print("Cannot cancel a delivered order.")
+
 
 class CancelledState(OrderState):
     def ship(self, order: 'Order') -> None:

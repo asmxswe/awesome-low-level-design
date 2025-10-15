@@ -1,12 +1,15 @@
 from abc import ABC, abstractmethod
-from user import User
 from typing import List
+
 from commentable_entity import Post
+from user import User
+
 
 class NewsFeedGenerationStrategy(ABC):
     @abstractmethod
     def generate_feed(self, user: User) -> List[Post]:
         pass
+
 
 class ChronologicalStrategy(NewsFeedGenerationStrategy):
     def generate_feed(self, user: User) -> List[Post]:

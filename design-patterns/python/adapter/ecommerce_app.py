@@ -1,7 +1,7 @@
+from .checkout_service import CheckoutService
 from .in_house_payment_processor import InHousePaymentProcessor
 from .legacy_gateway import LegacyGateway
 from .legacy_gateway_adapter import LegacyGatewayAdapter
-from .checkout_service import CheckoutService
 
 
 def ecommerce_app_v1():
@@ -28,6 +28,6 @@ def ecommerce_app_v2():
 if __name__ == "__main__":
     print("=== ECommerce App V1 ===")
     ecommerce_app_v1()
-    
+
     print("\n=== ECommerce App V2 ===")
-    ecommerce_app_v2() 
+    ecommerce_app_v2()

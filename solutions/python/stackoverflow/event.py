@@ -1,9 +1,11 @@
+from typing import TYPE_CHECKING
+
 from enums import EventType
 from user import User
-from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from post import Post
+
 
 class Event:
     def __init__(self, event_type: EventType, actor: User, target_post: 'Post'):

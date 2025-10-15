@@ -1,10 +1,12 @@
 from enum import Enum
 
+
 class BookingStatus(Enum):
     CONFIRMED = 1
     CANCELLED = 2
     PENDING = 3
     EXPIRED = 4
+
 
 class Booking:
     def __init__(self, booking_number, flight, passenger, seat, price):

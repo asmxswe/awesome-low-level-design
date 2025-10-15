@@ -1,7 +1,9 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional
-from member import Member
+
 from book_copy import BookCopy
+from member import Member
+
 
 class LibraryItem(ABC):
     def __init__(self, item_id: str, title: str):

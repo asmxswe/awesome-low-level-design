@@ -1,10 +1,12 @@
 import threading
-from user import User
-from address import Address
 from typing import TYPE_CHECKING
+
+from address import Address
+from user import User
 
 if TYPE_CHECKING:
     from order import Order
+
 
 class DeliveryAgent(User):
     def __init__(self, name: str, phone: str, current_location: Address):

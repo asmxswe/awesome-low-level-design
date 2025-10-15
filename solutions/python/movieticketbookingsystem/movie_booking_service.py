@@ -1,18 +1,20 @@
+import threading
+from datetime import datetime
 from typing import Dict, List, Optional
-from city import City
+
+from booking import Booking
+from booking_manager import BookingManager
 from cinema import Cinema
+from city import City
 from movie import Movie
+from payment_strategy import PaymentStrategy
+from pricing_strategy import PricingStrategy
 from screen import Screen
+from seat import Seat
+from seat_lock_manager import SeatLockManager
 from show import Show
 from user import User
-from seat_lock_manager import SeatLockManager
-from booking_manager import BookingManager
-from payment_strategy import PaymentStrategy
-from datetime import datetime
-from booking import Booking
-import threading
-from pricing_strategy import PricingStrategy
-from seat import Seat
+
 
 class MovieBookingService:
     _instance: Optional['MovieBookingService'] = None
@@ -61,7 +63,8 @@ class MovieBookingService:
     def add_movie(self, movie: Movie) -> None:
         self.movies[movie.get_id()] = movie
 
-    def add_show(self, show_id: str, movie: Movie, screen: Screen, start_time: datetime, pricing_strategy: PricingStrategy) -> Show:
+    def add_show(self, show_id: str, movie: Movie, screen: Screen, start_time: datetime,
+                 pricing_strategy: PricingStrategy) -> Show:
         show = Show(show_id, movie, screen, start_time, pricing_strategy)
         self.shows[show.get_id()] = show
         return show
@@ -71,7 +74,8 @@ class MovieBookingService:
         self.users[user.get_id()] = user
         return user
 
-    def book_tickets(self, user_id: str, show_id: str, desired_seats: List[Seat], payment_strategy: PaymentStrategy) -> Optional[Booking]:
+    def book_tickets(self, user_id: str, show_id: str, desired_seats: List[Seat], payment_strategy: PaymentStrategy) -> \
+    Optional[Booking]:
         return self.booking_manager.create_booking(
             self.users[user_id],
             self.shows[show_id],

@@ -1,11 +1,12 @@
-from typing import Dict
-from collections import defaultdict
-from threading import Lock
-from product import Product
-from order_line_item import OrderLineItem
-from exceptions import OutOfStockException
-from typing import List
 import threading
+from collections import defaultdict
+from typing import Dict
+from typing import List
+
+from exceptions import OutOfStockException
+from order_line_item import OrderLineItem
+from product import Product
+
 
 class InventoryService:
     def __init__(self):
@@ -22,7 +23,7 @@ class InventoryService:
             for item in items:
                 if self.stock[item.get_product_id()] < item.get_quantity():
                     raise OutOfStockException(f"Not enough stock for product ID: {item.get_product_id()}")
-            
+
             # If all checks pass, deduct the stock
             for item in items:
                 self.stock[item.get_product_id()] -= item.get_quantity()

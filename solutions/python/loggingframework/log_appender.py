@@ -1,8 +1,10 @@
 import threading
 from abc import ABC, abstractmethod
+
 from log_formatter import LogFormatter
-from log_message import LogMessage
 from log_formatter import SimpleTextFormatter
+from log_message import LogMessage
+
 
 class LogAppender(ABC):
     @abstractmethod
@@ -21,6 +23,7 @@ class LogAppender(ABC):
     def set_formatter(self, formatter: LogFormatter):
         pass
 
+
 class ConsoleAppender(LogAppender):
     def __init__(self):
         self.formatter = SimpleTextFormatter()
@@ -36,6 +39,7 @@ class ConsoleAppender(LogAppender):
 
     def get_formatter(self) -> LogFormatter:
         return self.formatter
+
 
 class FileAppender(LogAppender):
     def __init__(self, file_path: str):

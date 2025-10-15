@@ -1,15 +1,17 @@
-from typing import List, Set, Optional
-from bid import Bid
-from auction_state import AuctionState
+import threading
+import uuid
 from datetime import datetime
 from decimal import Decimal
-import uuid
-import threading
+from typing import List, Set, Optional
 from typing import TYPE_CHECKING
+
+from auction_state import AuctionState
+from bid import Bid
 
 if TYPE_CHECKING:
     from user import User
     from auction_observer import AuctionObserver
+
 
 class Auction:
     def __init__(self, item_name: str, description: str, starting_price: Decimal, end_time: datetime):
@@ -47,8 +49,8 @@ class Auction:
             print(f"SUCCESS: {bidder.get_name()} placed a bid of ${amount:.2f} on '{self.item_name}'.")
 
             if previous_highest_bidder is not None and previous_highest_bidder != bidder:
-                self.notify_observer(previous_highest_bidder, 
-                    f"You have been outbid on '{self.item_name}'! The new highest bid is ${amount:.2f}.")
+                self.notify_observer(previous_highest_bidder,
+                                     f"You have been outbid on '{self.item_name}'! The new highest bid is ${amount:.2f}.")
 
     def end_auction(self):
         with self._lock:

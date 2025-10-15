@@ -1,14 +1,16 @@
+from typing import TYPE_CHECKING
+
 from enums import OrderType, OrderStatus
-from stock import Stock
 from execution_strategy import ExecutionStrategy
 from order_states import OrderState, OpenState
-from typing import TYPE_CHECKING
+from stock import Stock
 
 if TYPE_CHECKING:
     from user import User
 
+
 class Order:
-    def __init__(self, order_id: str, user: 'User', stock: Stock, order_type: OrderType, 
+    def __init__(self, order_id: str, user: 'User', stock: Stock, order_type: OrderType,
                  quantity: int, price: float, execution_strategy: ExecutionStrategy, owner: 'User'):
         self.order_id = order_id
         self.user = user

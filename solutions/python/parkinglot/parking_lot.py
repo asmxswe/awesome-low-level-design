@@ -1,10 +1,12 @@
 import threading
-from parking_floor import ParkingFloor
-from parking_ticket import ParkingTicket
-from fee_strategy import FlatRateFeeStrategy, FeeStrategy
-from parking_strategy import NearestFirstStrategy, ParkingStrategy
-from vehicle import Vehicle
 from typing import List, Dict, Optional
+
+from fee_strategy import FlatRateFeeStrategy, FeeStrategy
+from parking_floor import ParkingFloor
+from parking_strategy import NearestFirstStrategy, ParkingStrategy
+from parking_ticket import ParkingTicket
+from vehicle import Vehicle
+
 
 class ParkingLot:
     _instance = None

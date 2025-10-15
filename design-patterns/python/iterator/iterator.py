@@ -3,6 +3,7 @@ from typing import TypeVar, Generic
 
 T = TypeVar('T')
 
+
 class Iterator(Generic[T], ABC):
     @abstractmethod
     def has_next(self) -> bool:
@@ -10,4 +11,4 @@ class Iterator(Generic[T], ABC):
 
     @abstractmethod
     def next(self) -> T:
-        pass 
+        pass

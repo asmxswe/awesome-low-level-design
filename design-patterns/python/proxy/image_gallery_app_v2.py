@@ -1,5 +1,6 @@
 from .image_proxy import ImageProxy
 
+
 def main():
     # Create image proxies
     print("Creating image proxies...")
@@ -22,5 +23,6 @@ def main():
     image2.display()  # Should use cached image
     image3.display()  # Should use cached image
 
+
 if __name__ == "__main__":
-    main() 
+    main()

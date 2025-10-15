@@ -1,10 +1,8 @@
 import uuid
-from user import User
-from account import Account
-from payment_method import PaymentMethod
-from currency import Currency
+
 from currency_converter import CurrencyConverter
 from transaction import Transaction
+
 
 class DigitalWallet:
     _instance = None

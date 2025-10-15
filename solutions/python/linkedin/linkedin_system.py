@@ -1,12 +1,14 @@
 import threading
 from typing import Dict, List, Optional
-from member import Member
+
 from connection_service import ConnectionService
-from newsfeed_service import NewsFeedService
-from search_service import SearchService
-from notification_service import NotificationService
 from feed_sorting_strategy import ChronologicalSortStrategy
+from member import Member
+from newsfeed_service import NewsFeedService
+from notification_service import NotificationService
 from post import Post
+from search_service import SearchService
+
 
 class LinkedInSystem:
     _instance: Optional['LinkedInSystem'] = None

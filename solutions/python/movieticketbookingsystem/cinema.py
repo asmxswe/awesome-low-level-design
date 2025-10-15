@@ -1,6 +1,8 @@
 from typing import List
+
 from city import City
 from screen import Screen
+
 
 class Cinema:
     def __init__(self, cinema_id: str, name: str, city: City, screens: List[Screen]):

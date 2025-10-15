@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from color import Color
+
 
 class Piece(ABC):
     def __init__(self, color, row, col):

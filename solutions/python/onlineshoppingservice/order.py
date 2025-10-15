@@ -1,13 +1,14 @@
 import uuid
-from order_observer import OrderObserver
-from order_line_item import OrderLineItem
-from enums import OrderStatus
-from typing import List
 from datetime import datetime
-from customer import Customer
+from typing import List
+
 from address import Address
-from order_states import OrderState, PlacedState
+from customer import Customer
+from enums import OrderStatus
+from order_line_item import OrderLineItem
 from order_observer import Subject
+from order_states import OrderState, PlacedState
+
 
 class Order(Subject):
     def __init__(self, customer: Customer, items: List[OrderLineItem], shipping_address: Address, total_amount: float):

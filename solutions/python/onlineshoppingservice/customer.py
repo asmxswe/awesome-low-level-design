@@ -1,11 +1,13 @@
-from order_observer import OrderObserver
-from address import Address
-from account import Account
 import uuid
 from typing import TYPE_CHECKING
 
+from account import Account
+from address import Address
+from order_observer import OrderObserver
+
 if TYPE_CHECKING:
     from order import Order
+
 
 class Customer(OrderObserver):
     def __init__(self, name: str, email: str, password: str, shipping_address: Address):
@@ -16,7 +18,8 @@ class Customer(OrderObserver):
         self.shipping_address = shipping_address
 
     def update(self, order: 'Order') -> None:
-        print(f"[Notification for {self.name}]: Your order #{order.get_id()} status has been updated to: {order.get_status().value}.")
+        print(
+            f"[Notification for {self.name}]: Your order #{order.get_id()} status has been updated to: {order.get_status().value}.")
 
     def get_id(self) -> str:
         return self.id

@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
-from user import User
+
 from commentable_entity import Post, Comment
+from user import User
+
 
 class PostObserver(ABC):
     @abstractmethod
@@ -14,6 +16,7 @@ class PostObserver(ABC):
     @abstractmethod
     def on_comment(self, post: Post, comment: Comment):
         pass
+
 
 class UserNotifier(PostObserver):
     def on_post_created(self, post: Post):

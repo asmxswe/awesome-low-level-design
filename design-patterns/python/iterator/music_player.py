@@ -1,5 +1,5 @@
 from .playlist import Playlist
-from .iterator import Iterator
+
 
 class MusicPlayer:
     def __init__(self):
@@ -13,4 +13,4 @@ class MusicPlayer:
         print("Playing all songs:")
         while iterator.has_next():
             song = iterator.next()
-            print(f"Now playing: {song}") 
+            print(f"Now playing: {song}")

@@ -1,10 +1,12 @@
-from typing import Dict, List, Optional
-from order import Order
-from stock import Stock
-from enums import OrderType, OrderStatus
-from order_states import FilledState
 import threading
 from collections import defaultdict
+from typing import Dict, List, Optional
+
+from enums import OrderType, OrderStatus
+from order import Order
+from order_states import FilledState
+from stock import Stock
+
 
 class StockExchange:
     _instance: Optional['StockExchange'] = None
@@ -89,7 +91,7 @@ class StockExchange:
         order.set_status(OrderStatus.FILLED)
         order.set_state(FilledState())
         stock_symbol = order.get_stock().get_symbol()
-        
+
         # Remove from books
         if order in self.buy_orders[stock_symbol]:
             self.buy_orders[stock_symbol].remove(order)

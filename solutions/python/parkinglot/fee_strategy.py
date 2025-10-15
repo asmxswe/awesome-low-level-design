@@ -1,11 +1,14 @@
 from abc import ABC, abstractmethod
+
 from parking_ticket import ParkingTicket
 from vehicle_size import VehicleSize
+
 
 class FeeStrategy(ABC):
     @abstractmethod
     def calculate_fee(self, parking_ticket: ParkingTicket) -> float:
         pass
+
 
 class FlatRateFeeStrategy(FeeStrategy):
     RATE_PER_HOUR = 10.0
@@ -14,6 +17,7 @@ class FlatRateFeeStrategy(FeeStrategy):
         duration = parking_ticket.get_exit_timestamp() - parking_ticket.get_entry_timestamp()
         hours = (duration // (1000 * 60 * 60)) + 1
         return hours * self.RATE_PER_HOUR
+
 
 class VehicleBasedFeeStrategy(FeeStrategy):
     HOURLY_RATES = {

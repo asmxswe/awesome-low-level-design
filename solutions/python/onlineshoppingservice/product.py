@@ -1,6 +1,8 @@
-from abc import ABC, abstractmethod
-from enums import ProductCategory
 import uuid
+from abc import ABC, abstractmethod
+
+from enums import ProductCategory
+
 
 class Product(ABC):
     def __init__(self):

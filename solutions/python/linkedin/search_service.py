@@ -1,5 +1,7 @@
 from typing import Collection, List
+
 from member import Member
+
 
 class SearchService:
     def __init__(self, members: Collection[Member]):

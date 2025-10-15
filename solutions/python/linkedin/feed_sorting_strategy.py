@@ -1,11 +1,14 @@
 from abc import ABC, abstractmethod
 from typing import List
+
 from post import Post
+
 
 class FeedSortingStrategy(ABC):
     @abstractmethod
     def sort(self, posts: List[Post]) -> List[Post]:
         pass
+
 
 class ChronologicalSortStrategy(FeedSortingStrategy):
     def sort(self, posts: List[Post]) -> List[Post]:

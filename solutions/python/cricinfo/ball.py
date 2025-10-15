@@ -1,5 +1,6 @@
 from commentary_manager import CommentaryManager
 
+
 class Ball:
     class BallBuilder:
         def __init__(self):
@@ -41,10 +42,10 @@ class Ball:
 
         def build(self):
             temp_ball = Ball(self)
-            
+
             if self.commentary is None:
                 self.commentary = CommentaryManager.get_instance().generate_commentary(temp_ball)
-            
+
             return Ball(self)
 
     def __init__(self, builder):

@@ -1,5 +1,7 @@
 from typing import List
+
 from course import Course
+
 
 class Student:
     def __init__(self, student_id: int, name: str, email: str, registered_courses: List[Course]):

@@ -1,14 +1,17 @@
 from abc import ABC, abstractmethod
-from parking_floor import ParkingFloor
-from vehicle import Vehicle
-from parking_spot import ParkingSpot
-from vehicle_size import VehicleSize
 from typing import List, Optional
+
+from parking_floor import ParkingFloor
+from parking_spot import ParkingSpot
+from vehicle import Vehicle
+from vehicle_size import VehicleSize
+
 
 class ParkingStrategy(ABC):
     @abstractmethod
     def find_spot(self, floors: List[ParkingFloor], vehicle: Vehicle) -> Optional[ParkingSpot]:
         pass
+
 
 class NearestFirstStrategy(ParkingStrategy):
     def find_spot(self, floors: List[ParkingFloor], vehicle: Vehicle) -> Optional[ParkingSpot]:
@@ -18,6 +21,7 @@ class NearestFirstStrategy(ParkingStrategy):
                 return spot
         return None
 
+
 class FarthestFirstStrategy(ParkingStrategy):
     def find_spot(self, floors: List[ParkingFloor], vehicle: Vehicle) -> Optional[ParkingSpot]:
         reversed_floors = list(reversed(floors))
@@ -26,6 +30,7 @@ class FarthestFirstStrategy(ParkingStrategy):
             if spot is not None:
                 return spot
         return None
+
 
 class BestFitStrategy(ParkingStrategy):
     def find_spot(self, floors: List[ParkingFloor], vehicle: Vehicle) -> Optional[ParkingSpot]:
@@ -39,7 +44,8 @@ class BestFitStrategy(ParkingStrategy):
                     best_spot = spot_on_this_floor
                 else:
                     # A smaller spot size enum ordinal means a tighter fit
-                    if list(VehicleSize).index(spot_on_this_floor.get_spot_size()) < list(VehicleSize).index(best_spot.get_spot_size()):
+                    if list(VehicleSize).index(spot_on_this_floor.get_spot_size()) < list(VehicleSize).index(
+                            best_spot.get_spot_size()):
                         best_spot = spot_on_this_floor
 
         return best_spot

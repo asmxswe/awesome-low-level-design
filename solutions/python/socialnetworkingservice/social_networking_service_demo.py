@@ -1,18 +1,19 @@
-from datetime import datetime
-from user import User
 from typing import List
-from commentable_entity import Post, Comment
+
+from commentable_entity import Post
 from social_network_facade import SocialNetworkFacade
+
 
 def print_feed(feed: List[Post]):
     if not feed:
         print("  No posts in the feed.")
         return
-    
+
     for post in feed:
         print(f"  Post by {post.get_author().get_name()} at {post.get_timestamp()}")
         print(f"    \"{post.get_content()}\"")
         print(f"    Likes: {len(post.get_likes())}, Comments: {len(post.get_comments())}")
+
 
 class SocialNetworkingServiceDemo:
     def run():
@@ -52,6 +53,7 @@ class SocialNetworkingServiceDemo:
         print("\n--- Charlie's News Feed (should see Bob's post) ---")
         charlies_feed = social_network.get_news_feed(charlie.get_id())
         print_feed(charlies_feed)
+
 
 if __name__ == "__main__":
     SocialNetworkingServiceDemo.run()

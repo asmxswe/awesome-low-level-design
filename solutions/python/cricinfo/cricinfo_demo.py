@@ -1,10 +1,11 @@
+from ball import Ball
 from cricinfo_service import CricInfoService
 from enums import PlayerRole, WicketType
 from match_format_strategy import T20FormatStrategy
-from team import Team
-from ball import Ball
-from wicket import Wicket
 from match_observer import CommentaryDisplay, ScorecardDisplay, UserNotifier
+from team import Team
+from wicket import Wicket
+
 
 class CricinfoDemo:
     @staticmethod
@@ -43,26 +44,26 @@ class CricinfoDemo:
 
         print("\n--- SIMULATING FIRST INNINGS ---")
         service.process_ball_update(match_id, Ball.BallBuilder()
-                                   .bowled_by(p7).faced_by(p1).with_runs(2).build())
+                                    .bowled_by(p7).faced_by(p1).with_runs(2).build())
         service.process_ball_update(match_id, Ball.BallBuilder()
-                                   .bowled_by(p7).faced_by(p1).with_runs(1).build())
+                                    .bowled_by(p7).faced_by(p1).with_runs(1).build())
         service.process_ball_update(match_id, Ball.BallBuilder()
-                                   .bowled_by(p7).faced_by(p2).with_runs(6).build())
+                                    .bowled_by(p7).faced_by(p2).with_runs(6).build())
 
         p2_wicket = Wicket.Builder(WicketType.BOWLED, p2).build()
         service.process_ball_update(match_id, Ball.BallBuilder()
-                                   .bowled_by(p7).faced_by(p2).with_runs(0).with_wicket(p2_wicket).build())
+                                    .bowled_by(p7).faced_by(p2).with_runs(0).with_wicket(p2_wicket).build())
 
         p3_wicket = Wicket.Builder(WicketType.LBW, p3).build()
         service.process_ball_update(match_id, Ball.BallBuilder()
-                                   .bowled_by(p7).faced_by(p3).with_runs(0).with_wicket(p3_wicket).build())
+                                    .bowled_by(p7).faced_by(p3).with_runs(0).with_wicket(p3_wicket).build())
 
         service.process_ball_update(match_id, Ball.BallBuilder()
-                                   .bowled_by(p7).faced_by(p4).with_runs(4).build())
+                                    .bowled_by(p7).faced_by(p4).with_runs(4).build())
 
         p4_wicket = Wicket.Builder(WicketType.CAUGHT, p4).caught_by(p6).build()
         service.process_ball_update(match_id, Ball.BallBuilder()
-                                   .bowled_by(p7).faced_by(p4).with_runs(0).with_wicket(p4_wicket).build())
+                                    .bowled_by(p7).faced_by(p4).with_runs(0).with_wicket(p4_wicket).build())
 
         print("\n\n--- INNINGS BREAK ---")
         print("Players are off the field. Preparing for the second innings.")
@@ -72,24 +73,25 @@ class CricinfoDemo:
 
         print("\n--- SIMULATING SECOND INNINGS ---")
         service.process_ball_update(match_id, Ball.BallBuilder()
-                                   .bowled_by(p3).faced_by(p5).with_runs(4).build())
+                                    .bowled_by(p3).faced_by(p5).with_runs(4).build())
 
         service.process_ball_update(match_id, Ball.BallBuilder()
-                                   .bowled_by(p3).faced_by(p5).with_runs(1).build())
+                                    .bowled_by(p3).faced_by(p5).with_runs(1).build())
 
         p5_wicket = Wicket.Builder(WicketType.BOWLED, p5).build()
         service.process_ball_update(match_id, Ball.BallBuilder()
-                                   .bowled_by(p3).faced_by(p5).with_runs(0).with_wicket(p5_wicket).build())
+                                    .bowled_by(p3).faced_by(p5).with_runs(0).with_wicket(p5_wicket).build())
 
         p7_wicket = Wicket.Builder(WicketType.LBW, p7).build()
         service.process_ball_update(match_id, Ball.BallBuilder()
-                                   .bowled_by(p3).faced_by(p7).with_runs(0).with_wicket(p7_wicket).build())
+                                    .bowled_by(p3).faced_by(p7).with_runs(0).with_wicket(p7_wicket).build())
 
         p8_wicket = Wicket.Builder(WicketType.STUMPED, p8).build()
         service.process_ball_update(match_id, Ball.BallBuilder()
-                                   .bowled_by(p3).faced_by(p8).with_runs(0).with_wicket(p8_wicket).build())
+                                    .bowled_by(p3).faced_by(p8).with_runs(0).with_wicket(p8_wicket).build())
 
         service.end_match(match_id)
+
 
 if __name__ == "__main__":
     CricinfoDemo.main()

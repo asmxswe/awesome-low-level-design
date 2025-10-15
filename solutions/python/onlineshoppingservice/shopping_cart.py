@@ -1,6 +1,8 @@
 from typing import Dict
+
 from cart_item import CartItem
 from product import Product
+
 
 class ShoppingCart:
     def __init__(self):

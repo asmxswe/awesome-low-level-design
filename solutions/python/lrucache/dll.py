@@ -1,8 +1,10 @@
 from typing import TypeVar, Generic, Optional
+
 from node import Node
 
 K = TypeVar('K')
 V = TypeVar('V')
+
 
 class DoublyLinkedList(Generic[K, V]):
     def __init__(self):

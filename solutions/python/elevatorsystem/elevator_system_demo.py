@@ -1,12 +1,12 @@
-from elevator_system import ElevatorSystem
-from direction import Direction
 import time
+
+from direction import Direction
+from elevator_system import ElevatorSystem
+
 
 class ElevatorSystemDemo:
     @staticmethod
     def main():
-        import sys
-        
         # Setup: A building with 2 elevators
         num_elevators = 2
         # The get_instance method now initializes the elevators and attaches the Display (Observer).
@@ -47,6 +47,7 @@ class ElevatorSystemDemo:
         # Shutdown the system
         elevator_system.shutdown()
         print("\n--- SIMULATION END ---")
+
 
 if __name__ == "__main__":
     ElevatorSystemDemo.main()

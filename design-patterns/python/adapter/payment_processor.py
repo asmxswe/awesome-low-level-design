@@ -3,6 +3,7 @@ from abc import ABC, abstractmethod
 
 class PaymentProcessor(ABC):
     """Target Interface"""
+
     @abstractmethod
     def process_payment(self, amount: float, currency: str) -> None:
         pass
@@ -13,4 +14,4 @@ class PaymentProcessor(ABC):
 
     @abstractmethod
     def get_transaction_id(self) -> str:
-        pass 
+        pass

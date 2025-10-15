@@ -1,5 +1,6 @@
 from .music_player import MusicPlayer
 
+
 def main():
     # Create a music player
     player = MusicPlayer()
@@ -14,5 +15,6 @@ def main():
     # Play all songs using the iterator
     player.play_all()
 
+
 if __name__ == "__main__":
-    main() 
+    main()

@@ -1,6 +1,7 @@
-from library_management_system import LibraryManagementSystem
 from item_type import ItemType
+from library_management_system import LibraryManagementSystem
 from search_strategy import SearchByTitleStrategy, SearchByAuthorStrategy
+
 
 class LibraryManagementDemo:
     @staticmethod
@@ -24,7 +25,7 @@ class LibraryManagementDemo:
         print("Searching for title 'Dune':")
         for item in library.search("Dune", SearchByTitleStrategy()):
             print(f"Found: {item.get_title()}")
-        
+
         print("\nSearching for author 'Tolkien':")
         for item in library.search("Tolkien", SearchByAuthorStrategy()):
             print(f"Found: {item.get_title()}")
@@ -32,7 +33,7 @@ class LibraryManagementDemo:
         # === Scenario 2: Checkout and Return (State Pattern) ===
         print("\n\n=== Scenario 2: Checkout and Return ===")
         library.checkout(alice.get_id(), hobbit_copies[0].get_id())  # Alice checks out The Hobbit copy 1
-        library.checkout(bob.get_id(), dune_copies[0].get_id())     # Bob checks out Dune copy 1
+        library.checkout(bob.get_id(), dune_copies[0].get_id())  # Bob checks out Dune copy 1
         library.print_catalog()
 
         print("Attempting to checkout an already checked-out book:")

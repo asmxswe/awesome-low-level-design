@@ -1,6 +1,8 @@
 from typing import List
-from post import Post
+
 from feed_sorting_strategy import FeedSortingStrategy
+from post import Post
+
 
 class NewsFeed:
     def __init__(self, posts: List[Post]):

@@ -1,10 +1,12 @@
 from abc import ABC, abstractmethod
-from transaction_service import TransactionService
 from typing import TYPE_CHECKING
+
+from transaction_service import TransactionService
 
 if TYPE_CHECKING:
     from book_copy import BookCopy
     from member import Member
+
 
 class ItemState(ABC):
     @abstractmethod
@@ -40,7 +42,7 @@ class CheckedOutState(ItemState):
     def return_item(self, book_copy: 'BookCopy') -> None:
         TransactionService.get_instance().end_loan(book_copy)
         print(f"{book_copy.get_id()} returned.")
-        
+
         # If there are holds, move to OnHold state. Otherwise, become Available.
         if book_copy.get_item().has_observers():
             book_copy.set_state(OnHoldState())

@@ -1,11 +1,9 @@
 import threading
 from typing import Dict
-from log_message import LogMessage
-from log_appender import LogAppender
+
 from async_log_processor import AsyncLogProcessor
-from log_formatter import LogFormatter
-from log_appender import ConsoleAppender, FileAppender
 from logger import Logger
+
 
 class LogManager:
     _instance = None
@@ -35,7 +33,7 @@ class LogManager:
     def _create_logger(self, name: str) -> 'Logger':
         if name == "root":
             return self.root_logger
-        
+
         last_dot = name.rfind('.')
         parent_name = "root" if last_dot == -1 else name[:last_dot]
         parent = self.get_logger(parent_name)
@@ -56,8 +54,8 @@ class LogManager:
         for logger in self.loggers.values():
             for appender in logger.get_appenders():
                 all_appenders.add(appender)
-        
+
         for appender in all_appenders:
             appender.close()
-        
+
         print("Logging framework shut down gracefully.")

@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 class Message:
     def __init__(self, payload: str):
         self.payload = payload

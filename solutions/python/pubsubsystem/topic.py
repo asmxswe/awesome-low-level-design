@@ -1,7 +1,9 @@
-from subscriber import Subscriber
-from message import Message
-from typing import Set
 from concurrent.futures import ThreadPoolExecutor
+from typing import Set
+
+from message import Message
+from subscriber import Subscriber
+
 
 class Topic:
     def __init__(self, name: str, delivery_executor: ThreadPoolExecutor):

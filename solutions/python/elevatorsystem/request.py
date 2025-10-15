@@ -1,6 +1,8 @@
 from dataclasses import dataclass
+
 from direction import Direction
 from request_source import RequestSource
+
 
 @dataclass
 class Request:

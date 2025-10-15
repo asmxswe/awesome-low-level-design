@@ -1,6 +1,8 @@
 import datetime
-from booking import Booking
 from threading import Lock
+
+from booking import Booking
+
 
 class BookingManager:
     _instance = None

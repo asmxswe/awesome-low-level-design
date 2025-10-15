@@ -1,6 +1,7 @@
 from enums import ExtraType
 from player_stats import PlayerStats
 
+
 class Innings:
     def __init__(self, batting_team, bowling_team):
         self.batting_team = batting_team
@@ -9,7 +10,7 @@ class Innings:
         self.wickets = 0
         self.balls = []
         self.player_stats = {}
-        
+
         for player in batting_team.get_players():
             self.player_stats[player] = PlayerStats()
         for player in bowling_team.get_players():
@@ -19,7 +20,7 @@ class Innings:
         self.balls.append(ball)
         runs_scored = ball.get_runs_scored()
         self.score += runs_scored
-        
+
         if ball.get_extra_type() in [ExtraType.WIDE, ExtraType.NO_BALL]:
             self.score += 1
         else:
@@ -27,7 +28,7 @@ class Innings:
             ball.get_faced_by().get_stats().increment_balls_played()
             self.player_stats[ball.get_faced_by()].update_runs(runs_scored)
             self.player_stats[ball.get_faced_by()].increment_balls_played()
-        
+
         if ball.is_wicket():
             self.wickets += 1
             ball.get_bowled_by().get_stats().increment_wickets()
@@ -39,12 +40,12 @@ class Innings:
                 print(f"Player: {player.get_name()} - Stats: {stats}")
 
     def get_overs(self):
-        valid_balls = sum(1 for b in self.balls 
-                         if b.get_extra_type() not in [ExtraType.WIDE, ExtraType.NO_BALL])
-        
+        valid_balls = sum(1 for b in self.balls
+                          if b.get_extra_type() not in [ExtraType.WIDE, ExtraType.NO_BALL])
+
         completed_overs = valid_balls // 6
         balls_in_current_over = valid_balls % 6
-        
+
         return completed_overs + (balls_in_current_over / 10.0)
 
     def get_batting_team(self):

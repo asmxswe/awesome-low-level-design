@@ -1,8 +1,10 @@
+from datetime import date
+
+from education import Education
+from experience import Experience
 from linkedin_system import LinkedInSystem
 from member import Member
-from experience import Experience
-from education import Education
-from datetime import date
+
 
 class LinkedInDemo:
     @staticmethod
@@ -71,6 +73,7 @@ class LinkedInDemo:
         print("Search results for 'ali':")
         for member in search_results:
             print(f" - {member.get_name()}")
+
 
 if __name__ == "__main__":
     LinkedInDemo.main()

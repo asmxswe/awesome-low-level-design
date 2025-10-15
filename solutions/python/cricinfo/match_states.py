@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
+
 from enums import MatchStatus
+
 
 class MatchState(ABC):
     @abstractmethod
@@ -9,9 +11,11 @@ class MatchState(ABC):
     def start_next_innings(self, match):
         print("ERROR: Cannot start the next innings from the current state.")
 
+
 class ScheduledState(MatchState):
     def process_ball(self, match, ball):
         print("ERROR: Cannot process a ball for a match that has not started.")
+
 
 class InBreakState(MatchState):
     def process_ball(self, match, ball):
@@ -23,9 +27,11 @@ class InBreakState(MatchState):
         match.set_state(LiveState())
         match.set_current_status(MatchStatus.LIVE)
 
+
 class FinishedState(MatchState):
     def process_ball(self, match, ball):
         print("ERROR: Cannot process a ball for a finished match.")
+
 
 class LiveState(MatchState):
     def process_ball(self, match, ball):
@@ -43,7 +49,8 @@ class LiveState(MatchState):
         if is_final_innings:
             target_score = match.get_innings()[0].get_score() + 1
             if current_innings.get_score() >= target_score:
-                wickets_remaining = (len(current_innings.get_batting_team().get_players()) - 1) - current_innings.get_wickets()
+                wickets_remaining = (
+                                                len(current_innings.get_batting_team().get_players()) - 1) - current_innings.get_wickets()
                 self.declare_winner(match, current_innings.get_batting_team(), f"won by {wickets_remaining} wickets")
                 return
 
@@ -56,8 +63,10 @@ class LiveState(MatchState):
                 if score1 > score2:
                     self.declare_winner(match, match.get_team1(), f"won by {score1 - score2} runs")
                 elif score2 > score1:
-                    wickets_remaining = (len(current_innings.get_batting_team().get_players()) - 1) - current_innings.get_wickets()
-                    self.declare_winner(match, current_innings.get_batting_team(), f"won by {wickets_remaining} wickets")
+                    wickets_remaining = (
+                                                    len(current_innings.get_batting_team().get_players()) - 1) - current_innings.get_wickets()
+                    self.declare_winner(match, current_innings.get_batting_team(),
+                                        f"won by {wickets_remaining} wickets")
                 else:
                     self.declare_winner(match, None, "Match Tied")
             else:

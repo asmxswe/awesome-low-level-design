@@ -1,7 +1,8 @@
-from item_type import ItemType
 from book import Book
-from magazine import Magazine
+from item_type import ItemType
 from library_item import LibraryItem
+from magazine import Magazine
+
 
 class ItemFactory:
     @staticmethod

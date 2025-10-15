@@ -1,8 +1,10 @@
-from typing import Dict, List
-from course import Course
-from student import Student
-from registration import Registration
 from datetime import datetime
+from typing import Dict, List
+
+from course import Course
+from registration import Registration
+from student import Student
+
 
 class CourseRegistrationSystem:
     instance = None

@@ -1,9 +1,11 @@
 import threading
+from collections import defaultdict
+from typing import Dict, Optional
+
 from parking_spot import ParkingSpot
 from vehicle import Vehicle
 from vehicle_size import VehicleSize
-from typing import Dict, Optional
-from collections import defaultdict
+
 
 class ParkingFloor:
     def __init__(self, floor_number: int):
@@ -29,7 +31,7 @@ class ParkingFloor:
     def display_availability(self):
         print(f"--- Floor {self.floor_number} Availability ---")
         available_counts = defaultdict(int)
-        
+
         for spot in self.spots.values():
             if not spot.is_occupied_spot():
                 available_counts[spot.get_spot_size()] += 1

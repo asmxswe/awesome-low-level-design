@@ -1,5 +1,6 @@
 from .ui_component import UIComponent
 
+
 class Button(UIComponent):
     def __init__(self, mediator: 'UIMediator'):
         super().__init__(mediator)
@@ -15,4 +16,4 @@ class Button(UIComponent):
 
     def click(self) -> None:
         if self._enabled:
-            self.notify_mediator() 
+            self.notify_mediator()

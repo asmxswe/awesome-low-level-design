@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class Employee(ABC):
     @abstractmethod
     def show_details(self) -> None:
@@ -7,4 +8,4 @@ class Employee(ABC):
 
     @abstractmethod
     def get_salary(self) -> float:
-        pass 
+        pass

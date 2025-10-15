@@ -1,7 +1,8 @@
-from stack_overflow_service import StackOverflowService
 from enums import VoteType
 from search_strategy import UserSearchStrategy, TagSearchStrategy
+from stack_overflow_service import StackOverflowService
 from tag import Tag
+
 
 class StackOverflowDemo:
     @staticmethod
@@ -18,13 +19,16 @@ class StackOverflowDemo:
         java_tag = Tag("java")
         design_patterns_tag = Tag("design-patterns")
         tags = {java_tag, design_patterns_tag}
-        question = service.post_question(alice.get_id(), "How to implement Observer Pattern?", "Details about Observer Pattern...", tags)
+        question = service.post_question(alice.get_id(), "How to implement Observer Pattern?",
+                                         "Details about Observer Pattern...", tags)
         StackOverflowDemo.print_reputations(alice, bob, charlie)
 
         # 3. Bob and Charlie post answers
         print("\n--- Bob and Charlie post answers ---")
-        bob_answer = service.post_answer(bob.get_id(), question.get_id(), "You can use the java.util.Observer interface.")
-        charlie_answer = service.post_answer(charlie.get_id(), question.get_id(), "A better way is to create your own Observer interface.")
+        bob_answer = service.post_answer(bob.get_id(), question.get_id(),
+                                         "You can use the java.util.Observer interface.")
+        charlie_answer = service.post_answer(charlie.get_id(), question.get_id(),
+                                             "A better way is to create your own Observer interface.")
         StackOverflowDemo.print_reputations(alice, bob, charlie)
 
         # 4. Voting happens

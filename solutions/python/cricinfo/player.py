@@ -1,5 +1,6 @@
 from player_stats import PlayerStats
 
+
 class Player:
     def __init__(self, player_id, name, role):
         self.id = player_id

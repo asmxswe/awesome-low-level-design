@@ -1,10 +1,12 @@
-from user_service import UserService
-from post_service import PostService
+from typing import List
+
+from commentable_entity import Post
 from newsfeed_service import NewsFeedService
 from post_observer import UserNotifier
+from post_service import PostService
 from user import User
-from typing import List
-from commentable_entity import Post
+from user_service import UserService
+
 
 class SocialNetworkFacade:
     def __init__(self):

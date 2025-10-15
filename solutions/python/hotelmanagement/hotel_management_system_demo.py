@@ -1,8 +1,10 @@
 from datetime import date
-from hotel_management_system import HotelManagementSystem
-from guest import Guest
-from room import Room, RoomType
+
 from credit_card_payment import CreditCardPayment
+from guest import Guest
+from hotel_management_system import HotelManagementSystem
+from room import Room, RoomType
+
 
 class HotelManagementSystemDemo:
     @staticmethod
@@ -42,6 +44,7 @@ class HotelManagementSystemDemo:
         # Cancel a reservation
         hotel_management_system.cancel_reservation(reservation1.id)
         print(f"Reservation cancelled: {reservation1.id}")
+
 
 if __name__ == "__main__":
     HotelManagementSystemDemo.run()

@@ -1,12 +1,15 @@
 from typing import List, Optional
-from user import User
-from show import Show
-from seat import Seat
-from payment import Payment
+
 from enums import SeatStatus
+from payment import Payment
+from seat import Seat
+from show import Show
+from user import User
+
 
 class Booking:
-    def __init__(self, booking_id: str, user: User, show: Show, seats: List[Seat], total_amount: float, payment: Payment):
+    def __init__(self, booking_id: str, user: User, show: Show, seats: List[Seat], total_amount: float,
+                 payment: Payment):
         self.id = booking_id
         self.user = user
         self.show = show

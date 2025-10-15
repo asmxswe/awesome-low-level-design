@@ -1,5 +1,6 @@
-from .request_handler import RequestHandler
 from .request import Request
+from .request_handler import RequestHandler
+
 
 class BaseHandler(RequestHandler):
     def __init__(self):
@@ -13,4 +14,4 @@ class BaseHandler(RequestHandler):
 
     def _forward(self, request: Request) -> None:
         if self._next is not None:
-            self._next.handle(request) 
+            self._next.handle(request)

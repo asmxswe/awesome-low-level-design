@@ -1,7 +1,9 @@
 from typing import List
+
 from .iterable_collection import IterableCollection
 from .iterator import Iterator
 from .playlist_iterator import PlaylistIterator
+
 
 class Playlist(IterableCollection[str]):
     def __init__(self):
@@ -17,4 +19,4 @@ class Playlist(IterableCollection[str]):
         return len(self.songs)
 
     def create_iterator(self) -> Iterator[str]:
-        return PlaylistIterator(self) 
+        return PlaylistIterator(self)

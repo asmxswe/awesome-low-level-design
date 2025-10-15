@@ -1,6 +1,8 @@
 import uuid
+
 from credit_card_payment_processor import CreditCardPaymentProcessor
 from reservation import Reservation
+
 
 class RentalSystem:
     _instance = None

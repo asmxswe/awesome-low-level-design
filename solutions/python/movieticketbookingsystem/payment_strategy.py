@@ -1,13 +1,16 @@
-from abc import ABC, abstractmethod
-from payment import Payment
-from enums import PaymentStatus
 import random
 import uuid
+from abc import ABC, abstractmethod
+
+from enums import PaymentStatus
+from payment import Payment
+
 
 class PaymentStrategy(ABC):
     @abstractmethod
     def pay(self, amount: float) -> Payment:
         pass
+
 
 class CreditCardPaymentStrategy(PaymentStrategy):
     def __init__(self, card_number: str, cvv: str):

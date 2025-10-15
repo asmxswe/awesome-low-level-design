@@ -1,6 +1,7 @@
 from datetime import date
 from typing import Optional
 
+
 class Experience:
     def __init__(self, title: str, company: str, start_date: date, end_date: Optional[date]):
         self.title = title

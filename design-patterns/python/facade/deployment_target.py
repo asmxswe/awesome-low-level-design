@@ -1,5 +1,6 @@
 import time
 
+
 class DeploymentTarget:
     def transfer_artifact(self, artifact_path: str, server: str) -> None:
         print(f"Deployment: Transferring {artifact_path} to {server}...")
@@ -12,4 +13,4 @@ class DeploymentTarget:
         print(f"Deployment: Now live on {server}!")
 
     def _simulate_delay(self, seconds: int) -> None:
-        time.sleep(seconds) 
+        time.sleep(seconds)

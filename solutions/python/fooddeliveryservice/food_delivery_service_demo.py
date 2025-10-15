@@ -1,10 +1,11 @@
-from food_delivery_service import FoodDeliveryService
-from delivery_assignment_strategy import NearestAvailableAgentStrategy
-from restaurant_search_strategy import SearchByCityStrategy, SearchByProximityStrategy, SearchByMenuKeywordStrategy
-from order_status import OrderStatus
-from order_item import OrderItem
-from menu_item import MenuItem
 from address import Address
+from delivery_assignment_strategy import NearestAvailableAgentStrategy
+from food_delivery_service import FoodDeliveryService
+from menu_item import MenuItem
+from order_item import OrderItem
+from order_status import OrderStatus
+from restaurant_search_strategy import SearchByCityStrategy, SearchByProximityStrategy, SearchByMenuKeywordStrategy
+
 
 class FoodDeliveryServiceDemo:
     @staticmethod

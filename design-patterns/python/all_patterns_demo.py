@@ -4,6 +4,7 @@ Comprehensive demo of all implemented design patterns in Python.
 This script demonstrates the same design patterns as implemented in Java.
 """
 
+
 def run_adapter_demo():
     """Run Adapter Pattern Demo"""
     try:
@@ -185,7 +186,7 @@ def main():
     print("DESIGN PATTERNS IN PYTHON")
     print("Following the same examples as Java implementations")
     print("=" * 60)
-    
+
     # Creational Patterns
     run_adapter_demo()
     run_factory_demo()
@@ -193,19 +194,19 @@ def main():
     run_builder_demo()
     run_prototype_demo()
     run_singleton_demo()
-    
+
     # Structural Patterns
     run_bridge_demo()
     run_composite_demo()
     run_decorator_demo()
-    
+
     # Behavioral Patterns
     run_observer_demo()
     run_strategy_demo()
     run_command_demo()
     run_state_demo()
     run_template_method_demo()
-    
+
     print("\n" + "=" * 60)
     print("ALL IMPLEMENTED PATTERN DEMOS COMPLETED")
     print("=" * 60)

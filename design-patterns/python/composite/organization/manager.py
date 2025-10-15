@@ -1,5 +1,7 @@
 from typing import List
+
 from .employee import Employee
+
 
 class Manager(Employee):
     def __init__(self, name: str, salary: float):
@@ -23,4 +25,4 @@ class Manager(Employee):
         total_salary = self.salary
         for employee in self.subordinates:
             total_salary += employee.get_salary()
-        return total_salary 
+        return total_salary

@@ -1,10 +1,12 @@
-from user import User
-from address import Address
 from typing import List
 from typing import TYPE_CHECKING
 
+from address import Address
+from user import User
+
 if TYPE_CHECKING:
     from order import Order
+
 
 class Customer(User):
     def __init__(self, name: str, phone: str, address: Address):

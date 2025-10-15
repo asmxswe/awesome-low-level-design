@@ -1,10 +1,12 @@
 import threading
-from typing import Set
-from direction import Direction
-from request import Request
-from elevator_state import ElevatorState, IdleState
-from elevator_observer import ElevatorObserver
 import time
+from typing import Set
+
+from direction import Direction
+from elevator_observer import ElevatorObserver
+from elevator_state import ElevatorState, IdleState
+from request import Request
+
 
 class Elevator:
     def __init__(self, elevator_id: int):
@@ -13,10 +15,10 @@ class Elevator:
         self.current_floor_lock = threading.Lock()
         self.state = IdleState()
         self.is_running = True
-        
+
         self.up_requests = set()
         self.down_requests = set()
-        
+
         # Observer Pattern: List of observers
         self.observers = []
 

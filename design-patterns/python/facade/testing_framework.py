@@ -1,5 +1,6 @@
 import time
 
+
 class TestingFramework:
     def run_unit_tests(self) -> bool:
         print("Testing: Running unit tests...")
@@ -14,4 +15,4 @@ class TestingFramework:
         return True
 
     def _simulate_delay(self, seconds: int) -> None:
-        time.sleep(seconds) 
+        time.sleep(seconds)

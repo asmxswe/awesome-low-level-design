@@ -1,6 +1,8 @@
 from threading import Lock
+
 from room_status import RoomStatus
 from room_type import RoomType
+
 
 class Room:
     def __init__(self, id: str, type: RoomType, price: float):

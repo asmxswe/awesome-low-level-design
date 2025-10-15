@@ -1,10 +1,13 @@
 from datetime import datetime
+
 from movie import Movie
-from screen import Screen
 from pricing_strategy import PricingStrategy
+from screen import Screen
+
 
 class Show:
-    def __init__(self, show_id: str, movie: Movie, screen: Screen, start_time: datetime, pricing_strategy: PricingStrategy):
+    def __init__(self, show_id: str, movie: Movie, screen: Screen, start_time: datetime,
+                 pricing_strategy: PricingStrategy):
         self.id = show_id
         self.movie = movie
         self.screen = screen

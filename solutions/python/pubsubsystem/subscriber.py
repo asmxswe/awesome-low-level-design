@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
+
 from message import Message
+
 
 class Subscriber(ABC):
     @abstractmethod
@@ -10,6 +12,7 @@ class Subscriber(ABC):
     def on_message(self, message: Message):
         pass
 
+
 class AlertSubscriber(Subscriber):
     def __init__(self, subscriber_id: str):
         self.id = subscriber_id
@@ -19,6 +22,7 @@ class AlertSubscriber(Subscriber):
 
     def on_message(self, message: Message):
         print(f"!!! [ALERT - {self.id}] : '{message.get_payload()}' !!!")
+
 
 class NewsSubscriber(Subscriber):
     def __init__(self, subscriber_id: str):

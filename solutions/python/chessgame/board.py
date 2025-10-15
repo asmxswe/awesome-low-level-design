@@ -1,10 +1,11 @@
-from rook import Rook
-from knight import Knight
 from bishop import Bishop
-from queen import Queen
-from king import King
-from pawn import Pawn
 from color import Color
+from king import King
+from knight import Knight
+from pawn import Pawn
+from queen import Queen
+from rook import Rook
+
 
 class Board:
     def __init__(self):
@@ -47,7 +48,7 @@ class Board:
             return False
         dest_piece = self.board[dest_row][dest_col]
         return (dest_piece is None or dest_piece.color != piece.color) and \
-               piece.can_move(self, dest_row, dest_col)
+            piece.can_move(self, dest_row, dest_col)
 
     def is_checkmate(self, color):
         # TODO: Implement checkmate logic

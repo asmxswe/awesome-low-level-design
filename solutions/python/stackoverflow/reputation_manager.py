@@ -1,6 +1,7 @@
-from post_observer import PostObserver
-from event import Event
 from enums import EventType
+from event import Event
+from post_observer import PostObserver
+
 
 class ReputationManager(PostObserver):
     QUESTION_UPVOTE_REP = 5
@@ -11,7 +12,7 @@ class ReputationManager(PostObserver):
 
     def on_post_event(self, event: Event):
         post_author = event.get_target_post().get_author()
-        
+
         if event.get_type() == EventType.UPVOTE_QUESTION:
             post_author.update_reputation(self.QUESTION_UPVOTE_REP)
         elif event.get_type() == EventType.DOWNVOTE_QUESTION:

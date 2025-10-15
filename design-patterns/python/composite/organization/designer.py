@@ -1,5 +1,6 @@
 from .employee import Employee
 
+
 class Designer(Employee):
     def __init__(self, name: str, salary: float):
         self.name = name
@@ -9,4 +10,4 @@ class Designer(Employee):
         print(f"Designer: {self.name}, Salary: ${self.salary}")
 
     def get_salary(self) -> float:
-        return self.salary 
+        return self.salary

@@ -1,11 +1,14 @@
 from abc import ABC, abstractmethod
+
 from board import Board
 from player import Player
+
 
 class WinningStrategy(ABC):
     @abstractmethod
     def check_winner(self, board: Board, player: Player) -> bool:
         pass
+
 
 class RowWinningStrategy(WinningStrategy):
     def check_winner(self, board: Board, player: Player) -> bool:
@@ -19,6 +22,7 @@ class RowWinningStrategy(WinningStrategy):
                 return True
         return False
 
+
 class ColumnWinningStrategy(WinningStrategy):
     def check_winner(self, board: Board, player: Player) -> bool:
         for col in range(board.get_size()):
@@ -31,6 +35,7 @@ class ColumnWinningStrategy(WinningStrategy):
                 return True
         return False
 
+
 class DiagonalWinningStrategy(WinningStrategy):
     def check_winner(self, board: Board, player: Player) -> bool:
         # Main diagonal
@@ -41,7 +46,7 @@ class DiagonalWinningStrategy(WinningStrategy):
                 break
         if main_diag_win:
             return True
-        
+
         # Anti-diagonal
         anti_diag_win = True
         for i in range(board.get_size()):

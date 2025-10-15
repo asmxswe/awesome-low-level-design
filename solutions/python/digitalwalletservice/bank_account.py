@@ -1,5 +1,6 @@
 from payment_method import PaymentMethod
 
+
 class BankAccount(PaymentMethod):
     def __init__(self, id, user, account_number, routing_number):
         super().__init__(id, user)

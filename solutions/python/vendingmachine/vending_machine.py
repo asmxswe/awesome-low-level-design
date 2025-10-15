@@ -1,7 +1,8 @@
-from inventory import Inventory
 from coin import Coin
+from inventory import Inventory
 from item import Item
 from states import VendingMachineState, IdleState
+
 
 class VendingMachine:
     _instance = None

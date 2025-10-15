@@ -1,10 +1,12 @@
+import uuid
+from datetime import datetime
 from typing import List
+
+from enums import NotificationType
 from member import Member
 from notification import Notification
 from notification_observer import Subject
-from enums import NotificationType
-import uuid
-from datetime import datetime
+
 
 class Like:
     def __init__(self, member: Member):
@@ -13,6 +15,7 @@ class Like:
 
     def get_member(self) -> Member:
         return self.member
+
 
 class Comment:
     def __init__(self, author: Member, text: str):
@@ -25,6 +28,7 @@ class Comment:
 
     def get_text(self) -> str:
         return self.text
+
 
 class Post(Subject):
     def __init__(self, author: Member, content: str):

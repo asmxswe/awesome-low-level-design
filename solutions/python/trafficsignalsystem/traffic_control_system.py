@@ -1,8 +1,10 @@
-from intersection_controller import IntersectionController
-from observer import CentralMonitor
-from typing import List
 import threading
 from concurrent.futures import ThreadPoolExecutor
+from typing import List
+
+from intersection_controller import IntersectionController
+from observer import CentralMonitor
+
 
 class TrafficControlSystem:
     _instance = None
@@ -40,17 +42,17 @@ class TrafficControlSystem:
 
         print("--- Starting Traffic Control System ---")
         self._executor_service = ThreadPoolExecutor(max_workers=len(self._intersections))
-        
+
         for intersection in self._intersections:
             self._executor_service.submit(intersection.run)
 
     def stop_system(self):
         print("\n--- Shutting Down Traffic Control System ---")
-        
+
         for intersection in self._intersections:
             intersection.stop()
-        
+
         if self._executor_service:
             self._executor_service.shutdown(wait=True)
-        
+
         print("All intersections stopped. System shut down.")

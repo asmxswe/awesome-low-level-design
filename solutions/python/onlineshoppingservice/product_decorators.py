@@ -1,5 +1,6 @@
-from product import Product
 from enums import ProductCategory
+from product import Product
+
 
 class ProductDecorator(Product):
     def __init__(self, decorated_product: Product):
@@ -20,6 +21,7 @@ class ProductDecorator(Product):
 
     def get_category(self) -> ProductCategory:
         return self.decorated_product.get_category()
+
 
 class GiftWrapDecorator(ProductDecorator):
     GIFT_WRAP_COST = 5.00

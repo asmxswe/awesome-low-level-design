@@ -1,10 +1,11 @@
-from .shipping_strategy import ShippingStrategy
 import random
+
+from .shipping_strategy import ShippingStrategy
 
 
 class ThirdPartyApiShipping(ShippingStrategy):
     """Concrete Strategy - third-party API shipping"""
-    
+
     def calculate_cost(self, order) -> float:
         print(f"ThirdPartyApiShipping: Calling external API for {order}")
         # Simulate API call with random cost

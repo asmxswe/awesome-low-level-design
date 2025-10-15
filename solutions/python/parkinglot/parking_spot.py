@@ -1,6 +1,8 @@
 import threading
+
 from vehicle import Vehicle
 from vehicle_size import VehicleSize
+
 
 class ParkingSpot:
     def __init__(self, spot_id: str, spot_size: VehicleSize):

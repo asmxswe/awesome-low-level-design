@@ -1,8 +1,10 @@
-from log_message import LogMessage
-from log_appender import LogAppender
-from typing import List
-from concurrent.futures import ThreadPoolExecutor
 import sys
+from concurrent.futures import ThreadPoolExecutor
+from typing import List
+
+from log_appender import LogAppender
+from log_message import LogMessage
+
 
 class AsyncLogProcessor:
     def __init__(self):

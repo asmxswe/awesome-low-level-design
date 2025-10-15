@@ -1,6 +1,8 @@
 from typing import List, Optional
-from experience import Experience
+
 from education import Education
+from experience import Experience
+
 
 class Profile:
     def __init__(self):

@@ -3,7 +3,7 @@ from .order import Order
 
 class ShippingCostCalculatorNaive:
     """Naive implementation without strategy pattern (anti-pattern)"""
-    
+
     def calculate_shipping_cost(self, order: Order, shipping_type: str) -> float:
         if shipping_type == "FLAT_RATE":
             print(f"Calculating flat rate shipping for {order}")

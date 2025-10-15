@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 class Transaction:
     def __init__(self, id, source_account, destination_account, amount, currency):
         self.id = id

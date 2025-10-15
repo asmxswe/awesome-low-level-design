@@ -1,5 +1,7 @@
 import time
+
 from traffic_control_system import TrafficControlSystem
+
 
 class TrafficSystemDemo:
     @staticmethod
@@ -22,6 +24,7 @@ class TrafficSystemDemo:
 
         # 5. Stop the system gracefully
         system.stop_system()
+
 
 if __name__ == "__main__":
     TrafficSystemDemo.main()

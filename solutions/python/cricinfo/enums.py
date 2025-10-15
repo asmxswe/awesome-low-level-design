@@ -1,9 +1,11 @@
 from enum import Enum
 
+
 class MatchType(Enum):
     T20 = "T20"
     ODI = "ODI"
     TEST = "TEST"
+
 
 class MatchStatus(Enum):
     SCHEDULED = "SCHEDULED"
@@ -12,11 +14,13 @@ class MatchStatus(Enum):
     FINISHED = "FINISHED"
     ABANDONED = "ABANDONED"
 
+
 class PlayerRole(Enum):
     BATSMAN = "BATSMAN"
     BOWLER = "BOWLER"
     ALL_ROUNDER = "ALL_ROUNDER"
     WICKET_KEEPER = "WICKET_KEEPER"
+
 
 class WicketType(Enum):
     BOWLED = "BOWLED"
@@ -25,6 +29,7 @@ class WicketType(Enum):
     RUN_OUT = "RUN_OUT"
     STUMPED = "STUMPED"
     HIT_WICKET = "HIT_WICKET"
+
 
 class ExtraType(Enum):
     WIDE = "WIDE"

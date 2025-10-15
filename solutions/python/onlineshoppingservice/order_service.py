@@ -1,9 +1,9 @@
-from inventory_service import InventoryService
-from shopping_cart import ShoppingCart
-from order import Order
-from order_line_item import OrderLineItem
-from customer import Customer
 from typing import TYPE_CHECKING
+
+from customer import Customer
+from inventory_service import InventoryService
+from order import Order
+from shopping_cart import ShoppingCart
 
 if TYPE_CHECKING:
     from customer import Customer
@@ -11,6 +11,7 @@ if TYPE_CHECKING:
     from order import Order
     from order_line_item import OrderLineItem
     from inventory_service import InventoryService
+
 
 class OrderService:
     def __init__(self, inventory_service: InventoryService):

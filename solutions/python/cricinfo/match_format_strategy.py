@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class MatchFormatStrategy(ABC):
     @abstractmethod
     def get_total_innings(self):
@@ -13,6 +14,7 @@ class MatchFormatStrategy(ABC):
     def get_format_name(self):
         pass
 
+
 class T20FormatStrategy(MatchFormatStrategy):
     def get_total_innings(self):
         return 2
@@ -22,6 +24,7 @@ class T20FormatStrategy(MatchFormatStrategy):
 
     def get_format_name(self):
         return "T20"
+
 
 class ODIFormatStrategy(MatchFormatStrategy):
     def get_total_innings(self):

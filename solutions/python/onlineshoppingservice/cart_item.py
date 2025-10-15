@@ -1,8 +1,10 @@
-from product import Product
 from typing import TYPE_CHECKING
+
+from product import Product
 
 if TYPE_CHECKING:
     from product import Product
+
 
 class CartItem:
     def __init__(self, product: Product, quantity: int):

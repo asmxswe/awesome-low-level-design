@@ -1,7 +1,7 @@
-from .report_data import ReportData
 from .csv_report_exporter import CsvReportExporter
-from .pdf_report_exporter import PdfReportExporter
 from .excel_report_exporter import ExcelReportExporter
+from .pdf_report_exporter import PdfReportExporter
+from .report_data import ReportData
 
 
 def create_sample_data() -> ReportData:
@@ -17,22 +17,22 @@ def create_sample_data() -> ReportData:
 def template_method_demo():
     """Demonstrate Template Method pattern"""
     print("=== Template Method Pattern Demo ===")
-    
+
     # Create sample data
     report_data = create_sample_data()
-    
+
     # Create exporters
     csv_exporter = CsvReportExporter()
     pdf_exporter = PdfReportExporter()
     excel_exporter = ExcelReportExporter()
-    
+
     # Export using different formats - same algorithm, different implementations
     print("\n--- CSV Export ---")
     csv_exporter.export_report(report_data, "employee_report.csv")
-    
+
     print("\n--- PDF Export ---")
     pdf_exporter.export_report(report_data, "employee_report.pdf")
-    
+
     print("\n--- Excel Export ---")
     excel_exporter.export_report(report_data, "employee_report.xlsx")
 

@@ -1,10 +1,13 @@
 from abc import ABC, abstractmethod
+
 from log_message import LogMessage
+
 
 class LogFormatter(ABC):
     @abstractmethod
     def format(self, log_message: LogMessage) -> str:
         pass
+
 
 class SimpleTextFormatter(LogFormatter):
     def format(self, log_message: LogMessage) -> str:

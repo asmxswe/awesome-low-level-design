@@ -1,12 +1,13 @@
 import uuid
-from order_item import OrderItem
-from order_status import OrderStatus
-from customer import Customer
-from restaurant import Restaurant
-from delivery_agent import DeliveryAgent
 from typing import List, Optional
-from typing import TYPE_CHECKING
-from order_observer import OrderObserver    
+
+from customer import Customer
+from delivery_agent import DeliveryAgent
+from order_item import OrderItem
+from order_observer import OrderObserver
+from order_status import OrderStatus
+from restaurant import Restaurant
+
 
 class Order:
     def __init__(self, customer: Customer, restaurant: Restaurant, items: List[OrderItem]):

@@ -1,5 +1,7 @@
 from typing import List
+
 from seat import Seat
+
 
 class Screen:
     def __init__(self, screen_id: str):

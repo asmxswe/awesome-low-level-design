@@ -1,9 +1,11 @@
-from order_observer import OrderObserver
 import uuid
 from typing import TYPE_CHECKING
 
+from order_observer import OrderObserver
+
 if TYPE_CHECKING:
-    from order import Order
+    pass
+
 
 class User(OrderObserver):
     def __init__(self, name: str, phone: str):

@@ -1,6 +1,8 @@
-from student import Student
-from course import Course
 import datetime
+
+from course import Course
+from student import Student
+
 
 class Registration:
     def __init__(self, student: Student, course: Course, registration_time: datetime):

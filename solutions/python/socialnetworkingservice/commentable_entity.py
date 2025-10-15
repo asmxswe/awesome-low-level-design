@@ -1,10 +1,11 @@
+import uuid
 from datetime import datetime
 from typing import List, Set
-import uuid
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from user import User
+
 
 class CommentableEntity:
     def __init__(self, author: 'User', content: str):
@@ -39,9 +40,11 @@ class CommentableEntity:
     def get_likes(self) -> Set['User']:
         return self.likes
 
+
 class Post(CommentableEntity):
     def __init__(self, author: 'User', content: str):
         super().__init__(author, content)
+
 
 class Comment(CommentableEntity):
     def __init__(self, author: 'User', content: str):

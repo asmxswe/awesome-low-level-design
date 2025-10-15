@@ -1,12 +1,14 @@
+import threading
+from typing import Dict, List
+
 from direction import Direction
-from traffic_light import TrafficLight
 from intersection_state import IntersectionState, NorthSouthGreenState
 from observer import TrafficObserver
-from typing import Dict, List
-import threading
+from traffic_light import TrafficLight
+
 
 class IntersectionController:
-    def __init__(self, intersection_id: int, traffic_lights: Dict[Direction, TrafficLight], 
+    def __init__(self, intersection_id: int, traffic_lights: Dict[Direction, TrafficLight],
                  green_duration: int, yellow_duration: int):
         self._id = intersection_id
         self._traffic_lights = traffic_lights

@@ -1,11 +1,14 @@
 from abc import ABC, abstractmethod
 from typing import List
+
 from notification import Notification
+
 
 class NotificationObserver(ABC):
     @abstractmethod
     def update(self, notification: 'Notification') -> None:
         pass
+
 
 class Subject:
     def __init__(self):

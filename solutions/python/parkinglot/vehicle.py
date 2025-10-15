@@ -1,5 +1,7 @@
 from abc import ABC
+
 from vehicle_size import VehicleSize
+
 
 class Vehicle(ABC):
     def __init__(self, license_number: str, size: VehicleSize):

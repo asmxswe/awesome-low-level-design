@@ -1,9 +1,11 @@
 from typing import Optional
-from .ui_mediator import UIMediator
-from .ui_component import UIComponent
-from .text_field import TextField
+
 from .button import Button
 from .label import Label
+from .text_field import TextField
+from .ui_component import UIComponent
+from .ui_mediator import UIMediator
+
 
 class FormMediator(UIMediator):
     def __init__(self):
@@ -30,12 +32,12 @@ class FormMediator(UIMediator):
                 enable_button = bool(self.username_field.text and self.password_field.text)
                 self.login_button.enabled = enable_button
         elif component == self.login_button:
-            if (self.username_field and self.password_field and 
-                self.status_label and self.login_button):
+            if (self.username_field and self.password_field and
+                    self.status_label and self.login_button):
                 username = self.username_field.text
                 password = self.password_field.text
 
                 if username == "admin" and password == "1234":
                     self.status_label.text = "✅ Login successful!"
                 else:
-                    self.status_label.text = "❌ Invalid credentials." 
+                    self.status_label.text = "❌ Invalid credentials."

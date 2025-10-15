@@ -1,5 +1,6 @@
 from movie_observer import MovieSubject
 
+
 class Movie(MovieSubject):
     def __init__(self, movie_id: str, title: str, duration_in_minutes: int):
         super().__init__()

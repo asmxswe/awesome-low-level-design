@@ -1,12 +1,15 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional
-from request import Request
+
 from direction import Direction
+from request import Request
+
 
 class ElevatorSelectionStrategy(ABC):
     @abstractmethod
     def select_elevator(self, elevators: List, request: Request) -> Optional:
         pass
+
 
 class NearestElevatorStrategy(ElevatorSelectionStrategy):
     def select_elevator(self, elevators: List, request: Request) -> Optional:

@@ -1,6 +1,8 @@
 from typing import Optional
-from .image import Image
+
 from .high_resolution_image import HighResolutionImage
+from .image import Image
+
 
 class ImageProxy(Image):
     def __init__(self, file_name: str):
@@ -21,4 +23,4 @@ class ImageProxy(Image):
             print(f"ImageProxy: Using cached high-resolution image for {self.file_name}")
 
         # Delegate the display call to the real image
-        self.real_image.display() 
+        self.real_image.display()

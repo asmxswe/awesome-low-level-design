@@ -1,10 +1,12 @@
 from enum import Enum
 
+
 class PaymentStatus(Enum):
     PENDING = 1
     COMPLETED = 2
     FAILED = 3
     REFUNDED = 4
+
 
 class Payment:
     def __init__(self, payment_id, payment_method, amount):

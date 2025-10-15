@@ -1,15 +1,17 @@
-from typing import Dict, List, Optional
-from product import Product
-from customer import Customer
-from order import Order
-from inventory_service import InventoryService
-from payment_service import PaymentService
-from order_service import OrderService
-from search_service import SearchService
-from payment_strategy import PaymentStrategy
-from address import Address
 import threading
+from typing import Dict, List, Optional
+
+from address import Address
+from customer import Customer
+from inventory_service import InventoryService
+from order import Order
+from order_service import OrderService
+from payment_service import PaymentService
+from payment_strategy import PaymentStrategy
+from product import Product
+from search_service import SearchService
 from shopping_cart import ShoppingCart
+
 
 class OnlineShoppingSystem:
     _instance = None
@@ -25,16 +27,16 @@ class OnlineShoppingSystem:
     def __init__(self):
         if hasattr(self, 'initialized'):
             return
-        
+
         self.products: Dict[str, Product] = {}
         self.customers: Dict[str, Customer] = {}
         self.orders: Dict[str, Order] = {}
-        
+
         self.inventory_service = InventoryService()
         self.payment_service = PaymentService()
         self.order_service = OrderService(self.inventory_service)
         self.search_service = SearchService(self.products.values())
-        
+
         self.initialized = True
 
     @classmethod
@@ -65,7 +67,7 @@ class OnlineShoppingSystem:
     def place_order(self, customer_id: str, payment_strategy: PaymentStrategy) -> Optional[Order]:
         customer = self.customers[customer_id]
         cart = customer.get_account().get_cart()
-        
+
         if not cart.get_items():
             print("Cannot place an order with an empty cart.")
             return None

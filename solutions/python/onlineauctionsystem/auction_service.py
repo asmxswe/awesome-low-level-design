@@ -1,11 +1,13 @@
-from user import User
-from auction import Auction
-from typing import Dict, List
-from decimal import Decimal
-from datetime import datetime
 import threading
-from concurrent.futures import ThreadPoolExecutor
 import time
+from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime
+from decimal import Decimal
+from typing import Dict, List
+
+from auction import Auction
+from user import User
+
 
 class AuctionService:
     _instance = None

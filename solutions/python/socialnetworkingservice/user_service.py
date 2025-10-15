@@ -1,6 +1,8 @@
-from user import User
-from repository import UserRepository
 from typing import Optional
+
+from repository import UserRepository
+from user import User
+
 
 class UserService:
     def __init__(self):

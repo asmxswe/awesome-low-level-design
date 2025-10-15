@@ -1,6 +1,6 @@
 from innings import Innings
-from enums import MatchStatus
 from match_states import ScheduledState
+
 
 class Match:
     def __init__(self, match_id, team1, team2, format_strategy):
@@ -25,7 +25,7 @@ class Match:
         if len(self.innings) >= self.format_strategy.get_total_innings():
             print("Cannot create a new innings, match has already reached its limit.")
             return
-        
+
         next_innings = Innings(self.team2, self.team1)
         self.innings.append(next_innings)
 

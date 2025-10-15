@@ -1,13 +1,15 @@
-from user import User
 from typing import TYPE_CHECKING
+
+from user import User
 
 if TYPE_CHECKING:
     from trip import Trip
 
+
 class Rider(User):
     def __init__(self, name: str, contact: str):
         super().__init__(name, contact)
-    
+
     def on_update(self, trip: 'Trip'):
         print(f"--- Notification for Rider {self.get_name()} ---")
         print(f"  Trip {trip.get_id()} is now {trip.get_status().value}.")

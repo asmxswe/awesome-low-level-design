@@ -1,5 +1,7 @@
 import random
+
 from enums import WicketType, ExtraType
+
 
 class CommentaryManager:
     _instance = None
@@ -72,12 +74,12 @@ class CommentaryManager:
     def generate_commentary(self, ball):
         key = self.get_event_key(ball)
         templates = self.commentary_templates.get(key, ["Just a standard delivery."])
-        
+
         template = self.random.choice(templates)
-        
+
         batsman_name = ball.get_faced_by().get_name() if ball.get_faced_by() else ""
         bowler_name = ball.get_bowled_by().get_name() if ball.get_bowled_by() else ""
-        
+
         try:
             return template % batsman_name
         except:

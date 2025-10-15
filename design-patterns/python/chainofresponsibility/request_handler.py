@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
+
 from .request import Request
+
 
 class RequestHandler(ABC):
     @abstractmethod
@@ -8,4 +10,4 @@ class RequestHandler(ABC):
 
     @abstractmethod
     def handle(self, request: Request) -> None:
-        pass 
+        pass

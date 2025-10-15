@@ -1,6 +1,7 @@
 from .iterator import Iterator
 from .playlist import Playlist
 
+
 class PlaylistIterator(Iterator[str]):
     def __init__(self, playlist: Playlist):
         self.playlist = playlist
@@ -12,4 +13,4 @@ class PlaylistIterator(Iterator[str]):
     def next(self) -> str:
         song = self.playlist.get_song_at(self.index)
         self.index += 1
-        return song 
+        return song

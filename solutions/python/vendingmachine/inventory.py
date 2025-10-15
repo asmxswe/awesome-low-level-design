@@ -1,5 +1,7 @@
 from typing import Dict, Optional
+
 from item import Item
+
 
 class Inventory:
     def __init__(self):

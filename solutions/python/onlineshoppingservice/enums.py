@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class OrderStatus(Enum):
     PENDING_PAYMENT = "PENDING_PAYMENT"
     PLACED = "PLACED"
@@ -7,6 +8,7 @@ class OrderStatus(Enum):
     DELIVERED = "DELIVERED"
     CANCELLED = "CANCELLED"
     RETURNED = "RETURNED"
+
 
 class ProductCategory(Enum):
     ELECTRONICS = "ELECTRONICS"

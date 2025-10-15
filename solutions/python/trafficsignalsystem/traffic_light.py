@@ -1,9 +1,11 @@
+from typing import List
+
 from direction import Direction
 from light_color import LightColor
-from signal_state import SignalState
 from observer import TrafficObserver
-from typing import List
 from signal_state import RedState, GreenState
+from signal_state import SignalState
+
 
 class TrafficLight:
     def __init__(self, intersection_id: int, direction: Direction):

@@ -1,11 +1,13 @@
-from typing import Dict
-from member import Member
-from connection import Connection
-from notification_service import NotificationService
-from enums import ConnectionStatus, NotificationType
-import uuid
 import threading
+import uuid
+from typing import Dict
+
+from connection import Connection
+from enums import ConnectionStatus, NotificationType
+from member import Member
 from notification import Notification
+from notification_service import NotificationService
+
 
 class ConnectionService:
     def __init__(self, notification_service: NotificationService):
@@ -16,7 +18,7 @@ class ConnectionService:
     def send_request(self, from_member: Member, to_member: Member) -> str:
         connection = Connection(from_member, to_member)
         request_id = str(uuid.uuid4())
-        
+
         with self.lock:
             self.connection_requests[request_id] = connection
 
@@ -34,7 +36,7 @@ class ConnectionService:
     def accept_request(self, request_id: str) -> None:
         with self.lock:
             request = self.connection_requests.get(request_id)
-            
+
             if request and request.get_status() == ConnectionStatus.PENDING:
                 request.set_status(ConnectionStatus.ACCEPTED)
 

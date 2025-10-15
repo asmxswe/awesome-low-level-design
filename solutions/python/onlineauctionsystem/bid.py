@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from user import User
 
+
 class Bid:
     def __init__(self, bidder: 'User', amount: Decimal):
         self.bidder = bidder

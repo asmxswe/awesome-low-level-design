@@ -1,15 +1,18 @@
 from abc import ABC, abstractmethod
 from typing import List
-from user import User
 from typing import TYPE_CHECKING
+
+from user import User
 
 if TYPE_CHECKING:
     from movie import Movie
+
 
 class MovieObserver(ABC):
     @abstractmethod
     def update(self, movie: 'Movie') -> None:
         pass
+
 
 class MovieSubject:
     def __init__(self):
@@ -26,9 +29,11 @@ class MovieSubject:
         for observer in self.observers:
             observer.update(self)
 
+
 class UserObserver(MovieObserver):
     def __init__(self, user: User):
         self.user = user
 
     def update(self, movie: 'Movie') -> None:
-        print(f"Notification for {self.user.get_name()} ({self.user.get_id()}): Movie '{movie.get_title()}' is now available for booking!")
+        print(
+            f"Notification for {self.user.get_name()} ({self.user.get_id()}): Movie '{movie.get_title()}' is now available for booking!")

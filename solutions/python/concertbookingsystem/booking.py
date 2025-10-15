@@ -1,13 +1,16 @@
 from enum import Enum
 from typing import List
-from user import User
+
 from concert import Concert
 from seat import Seat
+from user import User
+
 
 class BookingStatus(Enum):
     PENDING = 1
     CONFIRMED = 2
     CANCELLED = 3
+
 
 class Booking:
     def __init__(self, id: str, user: User, concert: Concert, seats: List[Seat]):

@@ -1,5 +1,6 @@
 from threading import Lock
 
+
 class PaymentProcessor:
     _instance = None
     _lock = Lock()

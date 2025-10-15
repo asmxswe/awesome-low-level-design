@@ -1,11 +1,13 @@
-from log_level import LogLevel
-from log_message import LogMessage
-from log_appender import LogAppender
 from typing import List, Optional
 from typing import TYPE_CHECKING
 
+from log_appender import LogAppender
+from log_level import LogLevel
+from log_message import LogMessage
+
 if TYPE_CHECKING:
     from log_manager import LogManager
+
 
 class Logger:
     def __init__(self, name: str, parent: Optional['Logger']):
@@ -45,7 +47,7 @@ class Logger:
         if self.appenders:
             from log_manager import LogManager
             LogManager.get_instance().get_processor().process(log_message, self.appenders)
-        
+
         if self.additivity and self.parent is not None:
             self.parent._call_appenders(log_message)
 

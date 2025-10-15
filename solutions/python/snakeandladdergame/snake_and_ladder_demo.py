@@ -1,7 +1,8 @@
-from game import Game
-from snake import Snake
-from ladder import Ladder
 from dice import Dice
+from game import Game
+from ladder import Ladder
+from snake import Snake
+
 
 class SnakeAndLadderDemo:
     @staticmethod
@@ -12,15 +13,15 @@ class SnakeAndLadderDemo:
             Ladder(3, 38), Ladder(24, 33),
             Ladder(42, 93), Ladder(72, 84)
         ]
-        
+
         players = ["Alice", "Bob", "Charlie"]
-        
+
         game = Game.Builder() \
             .set_board(100, board_entities) \
             .set_players(players) \
             .set_dice(Dice(1, 6)) \
             .build()
-        
+
         game.play()
 
 

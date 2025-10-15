@@ -1,10 +1,12 @@
 from decimal import Decimal
-from user import User
+
 from account import Account
+from bank_account import BankAccount
+from credit_card import CreditCard
 from currency import Currency
 from digital_wallet import DigitalWallet
-from credit_card import CreditCard
-from bank_account import BankAccount
+from user import User
+
 
 class DigitalWalletDemo:
     @staticmethod
@@ -54,6 +56,7 @@ class DigitalWalletDemo:
             print(f"Amount: {transaction.amount} {transaction.currency}")
             print(f"Timestamp: {transaction.timestamp}")
             print()
+
 
 if __name__ == "__main__":
     DigitalWalletDemo.run()

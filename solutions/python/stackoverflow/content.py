@@ -5,8 +5,8 @@ from datetime import datetime
 from typing import Dict, List, Optional, Set, TYPE_CHECKING
 
 from enums import VoteType, EventType
-from user import User
 from tag import Tag
+from user import User
 
 if TYPE_CHECKING:
     from event import Event
@@ -63,7 +63,7 @@ class Post(Content):
 
             # Import here to avoid circular dependency
             from event import Event
-            
+
             if isinstance(self, Question):
                 event_type = EventType.UPVOTE_QUESTION if vote_type == VoteType.UPVOTE else EventType.DOWNVOTE_QUESTION
             else:
@@ -95,11 +95,11 @@ class Question(Post):
     def accept_answer(self, answer: 'Answer'):
         with self._lock:
             # Only the question author can accept an answer, and it shouldn't be their own answer
-            if (self.author.get_id() != answer.get_author().get_id() and 
-                self.accepted_answer is None):
+            if (self.author.get_id() != answer.get_author().get_id() and
+                    self.accepted_answer is None):
                 self.accepted_answer = answer
                 answer.set_accepted(True)
-                
+
                 # Import here to avoid circular dependency
                 from event import Event
                 self.notify_observers(Event(EventType.ACCEPT_ANSWER, answer.get_author(), answer))

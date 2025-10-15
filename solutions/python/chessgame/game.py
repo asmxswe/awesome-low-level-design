@@ -1,7 +1,8 @@
 from board import Board
-from player import Player
 from color import Color
 from move import Move
+from player import Player
+
 
 class Game:
     def __init__(self):
@@ -29,7 +30,7 @@ class Game:
 
     def _is_game_over(self):
         return self.board.is_checkmate(Color.WHITE) or self.board.is_checkmate(Color.BLACK) or \
-               self.board.is_stalemate(Color.WHITE) or self.board.is_stalemate(Color.BLACK)
+            self.board.is_stalemate(Color.WHITE) or self.board.is_stalemate(Color.BLACK)
 
     def _get_player_move(self, player):
         # TODO: Implement logic to get a valid move from the player

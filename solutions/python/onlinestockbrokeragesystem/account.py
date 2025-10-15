@@ -1,6 +1,8 @@
 import threading
 from typing import Dict
+
 from exceptions import InsufficientFundsException, InsufficientStockException
+
 
 class Account:
     def __init__(self, initial_cash: float):

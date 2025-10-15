@@ -1,7 +1,9 @@
+from typing import List
+
+from commentable_entity import Post
 from strategy import NewsFeedGenerationStrategy, ChronologicalStrategy
 from user import User
-from typing import List
-from commentable_entity import Post
+
 
 class NewsFeedService:
     def __init__(self):

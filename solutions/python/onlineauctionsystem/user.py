@@ -1,6 +1,8 @@
 import uuid
-from auction_observer import AuctionObserver
+
 from auction import Auction
+from auction_observer import AuctionObserver
+
 
 class User(AuctionObserver):
     def __init__(self, name: str):

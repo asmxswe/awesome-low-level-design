@@ -1,18 +1,22 @@
 from enum import Enum
 from threading import Lock
 
+
 class SeatType(Enum):
     REGULAR = 1
     PREMIUM = 2
     VIP = 3
+
 
 class SeatStatus(Enum):
     AVAILABLE = 1
     BOOKED = 2
     RESERVED = 3
 
+
 class SeatNotAvailableException(Exception):
     pass
+
 
 class Seat:
     def __init__(self, id: str, seat_number: str, seat_type: SeatType, price: float):

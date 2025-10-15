@@ -1,5 +1,6 @@
-from vending_machine import VendingMachine
 from coin import Coin
+from vending_machine import VendingMachine
+
 
 class VendingMachineDemo:
     @staticmethod

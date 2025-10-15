@@ -5,6 +5,7 @@ if TYPE_CHECKING:
     from book_copy import BookCopy
     from member import Member
 
+
 class Loan:
     def __init__(self, book_copy: 'BookCopy', member: 'Member'):
         self.copy = book_copy

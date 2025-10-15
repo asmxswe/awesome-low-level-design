@@ -1,8 +1,10 @@
 from enum import Enum
 
+
 class VoteType(Enum):
     UPVOTE = "UPVOTE"
     DOWNVOTE = "DOWNVOTE"
+
 
 class EventType(Enum):
     UPVOTE_QUESTION = "UPVOTE_QUESTION"

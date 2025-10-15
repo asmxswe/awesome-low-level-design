@@ -1,9 +1,11 @@
-from datetime import datetime, timedelta
+from datetime import datetime
 from typing import List
-from concert_ticket_booking_system import ConcertTicketBookingSystem
+
 from concert import Concert
+from concert_ticket_booking_system import ConcertTicketBookingSystem
 from seat import Seat, SeatType, SeatStatus
 from user import User
+
 
 class ConcertTicketBookingSystemDemo:
     @staticmethod
@@ -13,11 +15,13 @@ class ConcertTicketBookingSystemDemo:
 
         # Create concerts
         concert1_seats = ConcertTicketBookingSystemDemo._generate_seats(100)
-        concert1 = Concert("C001", "Artist 1", "Venue 1", datetime.now().replace(day=10, hour=20, minute=0, second=0, microsecond=0), concert1_seats)
+        concert1 = Concert("C001", "Artist 1", "Venue 1",
+                           datetime.now().replace(day=10, hour=20, minute=0, second=0, microsecond=0), concert1_seats)
         booking_system.add_concert(concert1)
 
         concert2_seats = ConcertTicketBookingSystemDemo._generate_seats(50)
-        concert2 = Concert("C002", "Artist 2", "Venue 2", datetime.now().replace(day=15, hour=19, minute=30, second=0, microsecond=0), concert2_seats)
+        concert2 = Concert("C002", "Artist 2", "Venue 2",
+                           datetime.now().replace(day=15, hour=19, minute=30, second=0, microsecond=0), concert2_seats)
         booking_system.add_concert(concert2)
 
         # Create users
@@ -58,6 +62,7 @@ class ConcertTicketBookingSystemDemo:
     def _select_seats(concert: Concert, number_of_seats: int) -> List[Seat]:
         available_seats = [seat for seat in concert.seats if seat.status == SeatStatus.AVAILABLE]
         return available_seats[:number_of_seats]
+
 
 if __name__ == "__main__":
     ConcertTicketBookingSystemDemo.run()

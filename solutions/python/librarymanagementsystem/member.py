@@ -1,10 +1,12 @@
 from typing import List
-from loan import Loan
 from typing import TYPE_CHECKING
+
+from loan import Loan
 
 if TYPE_CHECKING:
     from library_item import LibraryItem
     from loan import Loan
+
 
 class Member:
     def __init__(self, member_id: str, name: str):

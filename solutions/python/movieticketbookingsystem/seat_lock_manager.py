@@ -1,10 +1,12 @@
-from typing import Dict, List
-from show import Show
-from seat import Seat
-from enums import SeatStatus
 import threading
-from concurrent.futures import ThreadPoolExecutor
 import time
+from concurrent.futures import ThreadPoolExecutor
+from typing import Dict, List
+
+from enums import SeatStatus
+from seat import Seat
+from show import Show
+
 
 class SeatLockManager:
     def __init__(self):
@@ -32,7 +34,7 @@ class SeatLockManager:
 
             if show not in self.locked_seats:
                 self.locked_seats[show] = {}
-            
+
             for seat in seats:
                 self.locked_seats[show][seat] = user_id
 
@@ -61,7 +63,7 @@ class SeatLockManager:
                             print(f"Unlocked seat: {seat.get_id()} due to timeout.")
                         else:
                             print(f"Unlocked seat: {seat.get_id()} due to booking completion.")
-                
+
                 if not show_locks:
                     del self.locked_seats[show]
 

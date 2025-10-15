@@ -1,5 +1,6 @@
 import math
 
+
 class Address:
     def __init__(self, street: str, city: str, zip_code: str, latitude: float, longitude: float):
         self.street = street
@@ -17,4 +18,4 @@ class Address:
         return math.sqrt(lat_diff * lat_diff + lon_diff * lon_diff)
 
     def __str__(self) -> str:
-        return f"{self.street}, {self.city}, {self.zip_code} @({self.latitude}, {self.longitude})" 
+        return f"{self.street}, {self.city}, {self.zip_code} @({self.latitude}, {self.longitude})"

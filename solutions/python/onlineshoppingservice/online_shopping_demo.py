@@ -1,9 +1,10 @@
+from address import Address
+from enums import ProductCategory
 from online_shopping_system import OnlineShoppingSystem
+from payment_strategy import CreditCardPaymentStrategy, UPIPaymentStrategy
 from product import Product
 from product_decorators import GiftWrapDecorator
-from enums import ProductCategory
-from address import Address
-from payment_strategy import CreditCardPaymentStrategy, UPIPaymentStrategy
+
 
 class OnlineShoppingDemo:
     @staticmethod
@@ -16,14 +17,14 @@ class OnlineShoppingDemo:
             .with_description("A powerful and sleek laptop.") \
             .with_category(ProductCategory.ELECTRONICS) \
             .build()
-        
+
         book = Product.Builder("The Pragmatic Programmer", 45.50) \
             .with_description("A classic book for software developers.") \
             .with_category(ProductCategory.BOOKS) \
             .build()
 
         system.add_product(laptop, 10)  # 10 laptops in stock
-        system.add_product(book, 50)    # 50 books in stock
+        system.add_product(book, 50)  # 50 books in stock
 
         # Register a Customer
         alice_address = Address("123 Main St", "Anytown", "CA", "12345")
@@ -39,7 +40,8 @@ class OnlineShoppingDemo:
         # Alice decides to gift-wrap the book (Decorator Pattern)
         gift_wrapped_book = GiftWrapDecorator(book)
         system.add_to_cart(alice.get_id(), gift_wrapped_book.get_id(), 1)
-        print(f"Alice added a gift-wrapped book. Original price: ${book.get_price():.2f}, New price: ${gift_wrapped_book.get_price():.2f}")
+        print(
+            f"Alice added a gift-wrapped book. Original price: ${book.get_price():.2f}, New price: ${gift_wrapped_book.get_price():.2f}")
 
         alice_cart = system.get_customer_cart(alice.get_id())
         print(f"Alice's cart total: ${alice_cart.calculate_total():.2f}")

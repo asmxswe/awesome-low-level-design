@@ -1,5 +1,6 @@
 from .text_editor_client import TextEditorClient
 
+
 def main():
     # Create a text editor client
     editor = TextEditorClient()
@@ -26,5 +27,6 @@ def main():
     # Show flyweight count
     print(f"\nNumber of unique character flyweights: {editor.get_flyweight_count()}")
 
+
 if __name__ == "__main__":
-    main() 
+    main()

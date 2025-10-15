@@ -1,6 +1,7 @@
 from .text_editor import TextEditor
 from .text_editor_undo_manager import TextEditorUndoManager
 
+
 def main():
     # Create editor and undo manager
     editor = TextEditor()
@@ -33,5 +34,6 @@ def main():
     # Try to undo when nothing is left
     undo_manager.undo(editor)
 
+
 if __name__ == "__main__":
-    main() 
+    main()

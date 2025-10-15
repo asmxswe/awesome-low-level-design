@@ -1,11 +1,12 @@
-from parking_lot import ParkingLot
-from parking_floor import ParkingFloor
-from parking_spot import ParkingSpot
-from vehicle_size import VehicleSize
-from fee_strategy import VehicleBasedFeeStrategy
 from bike import Bike
 from car import Car
+from fee_strategy import VehicleBasedFeeStrategy
+from parking_floor import ParkingFloor
+from parking_lot import ParkingLot
+from parking_spot import ParkingSpot
 from truck import Truck
+from vehicle_size import VehicleSize
+
 
 class ParkingLotDemo:
     @staticmethod

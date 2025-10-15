@@ -1,17 +1,20 @@
 from typing import List, Optional
-from user import User
-from show import Show
-from seat import Seat
-from payment_strategy import PaymentStrategy
-from seat_lock_manager import SeatLockManager
-from enums import PaymentStatus
+
 from booking import Booking
+from enums import PaymentStatus
+from payment_strategy import PaymentStrategy
+from seat import Seat
+from seat_lock_manager import SeatLockManager
+from show import Show
+from user import User
+
 
 class BookingManager:
     def __init__(self, seat_lock_manager: SeatLockManager):
         self.seat_lock_manager = seat_lock_manager
 
-    def create_booking(self, user: User, show: Show, seats: List[Seat], payment_strategy: PaymentStrategy) -> Optional[Booking]:
+    def create_booking(self, user: User, show: Show, seats: List[Seat], payment_strategy: PaymentStrategy) -> Optional[
+        Booking]:
         # 1. Lock the seats
         self.seat_lock_manager.lock_seats(show, seats, user.get_id())
 

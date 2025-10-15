@@ -1,7 +1,9 @@
 from abc import ABC, abstractmethod
+
 from direction import Direction
 from request import Request
 from request_source import RequestSource
+
 
 class ElevatorState(ABC):
     @abstractmethod
@@ -15,6 +17,7 @@ class ElevatorState(ABC):
     @abstractmethod
     def get_direction(self) -> Direction:
         pass
+
 
 class IdleState(ElevatorState):
     def move(self, elevator):
@@ -33,7 +36,8 @@ class IdleState(ElevatorState):
 
     def get_direction(self) -> Direction:
         return Direction.IDLE
-    
+
+
 class MovingUpState(ElevatorState):
     def move(self, elevator):
         if not elevator.get_up_requests():
@@ -67,7 +71,8 @@ class MovingUpState(ElevatorState):
 
     def get_direction(self) -> Direction:
         return Direction.UP
-    
+
+
 class MovingDownState(ElevatorState):
     def move(self, elevator):
         if not elevator.get_down_requests():

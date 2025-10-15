@@ -1,7 +1,9 @@
-import uuid
 import time
-from vehicle import Vehicle
+import uuid
+
 from parking_spot import ParkingSpot
+from vehicle import Vehicle
+
 
 class ParkingTicket:
     def __init__(self, vehicle: Vehicle, spot: ParkingSpot):

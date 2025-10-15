@@ -1,5 +1,3 @@
-from datetime import datetime
-
 class Flight:
     def __init__(self, flight_number, source, destination, departure_time, arrival_time):
         self.flight_number = flight_number

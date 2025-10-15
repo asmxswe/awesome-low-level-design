@@ -1,8 +1,10 @@
+from typing import List
+
+from commentable_entity import Post, Comment
 from post_observer import PostObserver
 from repository import PostRepository
 from user import User
-from typing import List
-from commentable_entity import Post, Comment
+
 
 class PostService:
     def __init__(self):

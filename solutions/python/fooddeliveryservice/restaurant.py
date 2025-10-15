@@ -1,12 +1,14 @@
 import uuid
-from order_observer import OrderObserver
+from typing import TYPE_CHECKING
+
 from address import Address
 from menu import Menu
 from menu_item import MenuItem
-from typing import TYPE_CHECKING
+from order_observer import OrderObserver
 
 if TYPE_CHECKING:
     from order import Order
+
 
 class Restaurant(OrderObserver):
     def __init__(self, name: str, address: Address):

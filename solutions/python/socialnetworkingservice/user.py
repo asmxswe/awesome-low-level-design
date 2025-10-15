@@ -1,6 +1,8 @@
-from typing import List, Set
 import uuid
+from typing import List, Set
+
 from commentable_entity import Post
+
 
 class User:
     def __init__(self, name: str, email: str):

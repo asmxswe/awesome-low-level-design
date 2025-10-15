@@ -1,11 +1,11 @@
 from .email_notification import EmailNotification
-from .sms_notification import SMSNotification
 from .push_notification import PushNotification
+from .sms_notification import SMSNotification
 
 
 class NotificationServiceNaive:
     """Naive implementation without factory pattern (anti-pattern)"""
-    
+
     def send_notification(self, notification_type: str, message: str) -> None:
         if notification_type == "EMAIL":
             email = EmailNotification()

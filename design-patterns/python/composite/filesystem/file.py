@@ -1,5 +1,5 @@
-from typing import List
 from .file_system_item import FileSystemItem
+
 
 class File(FileSystemItem):
     def __init__(self, name: str, size: int):
@@ -10,4 +10,4 @@ class File(FileSystemItem):
         return self.size
 
     def __str__(self) -> str:
-        return f"File: {self.name} ({self.size} bytes)" 
+        return f"File: {self.name} ({self.size} bytes)"

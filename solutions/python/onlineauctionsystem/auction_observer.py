@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
+
 from auction import Auction
+
 
 class AuctionObserver(ABC):
     @abstractmethod

@@ -1,10 +1,12 @@
 from datetime import datetime, timedelta
 from typing import List
-from airline_management_system import AirlineManagementSystem
-from passenger import Passenger
-from flight import Flight
+
 from aircraft import Aircraft
+from airline_management_system import AirlineManagementSystem
+from flight import Flight
+from passenger import Passenger
 from seat import Seat, SeatType
+
 
 class AirlineManagementSystemDemo:
     @staticmethod
@@ -51,6 +53,7 @@ class AirlineManagementSystemDemo:
         # Cancel a booking
         airline_management_system.cancel_booking(booking.booking_number)
         print("Booking cancelled.")
+
 
 if __name__ == "__main__":
     AirlineManagementSystemDemo.run()

@@ -1,15 +1,17 @@
 import threading
 from typing import Dict, List, Optional
+
+from address import Address
 from customer import Customer
 from delivery_agent import DeliveryAgent
 from delivery_assignment_strategy import DeliveryAssignmentStrategy
+from menu import Menu
 from order import Order
+from order_item import OrderItem
+from order_status import OrderStatus
 from restaurant import Restaurant
 from restaurant_search_strategy import RestaurantSearchStrategy
-from order_status import OrderStatus
-from address import Address
-from order_item import OrderItem
-from menu import Menu
+
 
 class FoodDeliveryService:
     _instance = None

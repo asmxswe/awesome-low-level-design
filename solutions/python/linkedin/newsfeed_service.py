@@ -1,10 +1,12 @@
-from typing import Dict, List
-from member import Member
-from post import Post
-from feed_sorting_strategy import FeedSortingStrategy
-from newsfeed import NewsFeed
-from collections import defaultdict
 import threading
+from collections import defaultdict
+from typing import Dict, List
+
+from feed_sorting_strategy import FeedSortingStrategy
+from member import Member
+from newsfeed import NewsFeed
+from post import Post
+
 
 class NewsFeedService:
     def __init__(self):
@@ -20,7 +22,7 @@ class NewsFeedService:
 
     def display_feed_for_member(self, member: Member, feed_sorting_strategy: FeedSortingStrategy) -> None:
         feed_posts = []
-        
+
         for connection in member.get_connections():
             connection_posts = self.all_posts.get(connection.get_id(), [])
             feed_posts.extend(connection_posts)

@@ -1,6 +1,3 @@
-from datetime import datetime
-from typing import List, Dict
-
 class Course:
     def __init__(self, code: str, name: str, instructor: str, max_capacity: int, enrolled_students: int):
         self.code = code

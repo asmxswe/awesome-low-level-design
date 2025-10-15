@@ -1,5 +1,7 @@
 from decimal import Decimal
+
 from exception import InsufficientFundsException
+
 
 class Account:
     def __init__(self, id, user, account_number, currency):

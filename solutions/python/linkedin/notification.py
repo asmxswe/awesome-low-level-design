@@ -1,6 +1,8 @@
-from enums import NotificationType
 import uuid
 from datetime import datetime
+
+from enums import NotificationType
+
 
 class Notification:
     def __init__(self, member_id: str, notification_type: NotificationType, content: str):

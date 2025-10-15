@@ -1,5 +1,7 @@
 from typing import Dict
+
 from menu_item import MenuItem
+
 
 class Menu:
     def __init__(self):

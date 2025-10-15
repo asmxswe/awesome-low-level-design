@@ -1,5 +1,6 @@
 from enums import SeatStatus, SeatType
 
+
 class Seat:
     def __init__(self, seat_id: str, row: int, col: int, seat_type: SeatType):
         self.id = seat_id

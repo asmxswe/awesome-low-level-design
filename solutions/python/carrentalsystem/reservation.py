@@ -1,5 +1,3 @@
-from datetime import date, timedelta
-
 class Reservation:
     def __init__(self, reservation_id, customer, car, start_date, end_date):
         self.reservation_id = reservation_id

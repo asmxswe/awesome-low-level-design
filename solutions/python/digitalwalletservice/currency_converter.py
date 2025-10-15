@@ -1,5 +1,7 @@
 from decimal import Decimal
+
 from currency import Currency
+
 
 class CurrencyConverter:
     exchange_rates = {

@@ -1,5 +1,7 @@
 import uuid
+
 from enums import PaymentStatus
+
 
 class Payment:
     def __init__(self, amount: float, status: PaymentStatus, transaction_id: str):

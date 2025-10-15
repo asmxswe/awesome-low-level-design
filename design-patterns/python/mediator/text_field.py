@@ -1,5 +1,6 @@
 from .ui_component import UIComponent
 
+
 class TextField(UIComponent):
     def __init__(self, mediator: 'UIMediator'):
         super().__init__(mediator)
@@ -21,4 +22,4 @@ class TextField(UIComponent):
 
     @enabled.setter
     def enabled(self, value: bool) -> None:
-        self._enabled = value 
+        self._enabled = value

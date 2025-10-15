@@ -1,5 +1,7 @@
 from typing import List
+
 from stock_observer import StockObserver
+
 
 class Stock:
     def __init__(self, symbol: str, initial_price: float):

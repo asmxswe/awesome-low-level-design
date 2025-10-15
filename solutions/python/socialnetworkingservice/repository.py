@@ -1,7 +1,9 @@
-from user import User
-from typing import Optional
 from threading import Lock
+from typing import Optional
+
 from commentable_entity import Post
+from user import User
+
 
 class UserRepository:
     _instance = None
@@ -24,6 +26,7 @@ class UserRepository:
 
     def find_by_id(self, user_id: str) -> Optional[User]:
         return self.users.get(user_id)
+
 
 class PostRepository:
     _instance = None

@@ -1,10 +1,14 @@
-from user import User
-from stock_brokerage_system import StockBrokerageSystem
 import time
+
 from order_builder import OrderBuilder
+from stock_brokerage_system import StockBrokerageSystem
+from user import User
+
 
 def print_account_status(user: User) -> None:
-    print(f"Member: {user.get_name()}, Cash: ${user.get_account().get_balance():.2f}, Portfolio: {user.get_account().get_portfolio()}")
+    print(
+        f"Member: {user.get_name()}, Cash: ${user.get_account().get_balance():.2f}, Portfolio: {user.get_account().get_portfolio()}")
+
 
 class StockBrokerageSystemDemo:
     def run():
@@ -84,6 +88,7 @@ class StockBrokerageSystemDemo:
         print(f"Bob's sell order status: {bob_sell_order.get_status().value}")
         system.cancel_order(bob_sell_order)  # This should fail
         print(f"Bob's sell order status after cancel attempt: {bob_sell_order.get_status().value}")
+
 
 if __name__ == "__main__":
     StockBrokerageSystemDemo.run()

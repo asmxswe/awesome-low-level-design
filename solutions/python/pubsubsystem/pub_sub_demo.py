@@ -1,10 +1,12 @@
-from pub_sub_service import PubSubService
-from subscriber import NewsSubscriber, AlertSubscriber
-from message import Message
 import time
 
+from message import Message
+from pub_sub_service import PubSubService
+from subscriber import NewsSubscriber, AlertSubscriber
+
+
 class PubSubDemo:
-    @staticmethod  
+    @staticmethod
     def main():
         pub_sub_service = PubSubService.get_instance()
 
@@ -63,6 +65,7 @@ class PubSubDemo:
 
         # --- Shutdown the service ---
         pub_sub_service.shutdown()
+
 
 if __name__ == "__main__":
     PubSubDemo.main()

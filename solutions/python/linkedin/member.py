@@ -1,10 +1,12 @@
+import uuid
 from typing import List, Set
-from profile import Profile
+
+from education import Education
+from experience import Experience
 from notification import Notification
 from notification_observer import NotificationObserver
-from experience import Experience
-from education import Education
-import uuid
+from profile import Profile
+
 
 class Member(NotificationObserver):
     def __init__(self, member_id: str, name: str, email: str, profile: Profile):
@@ -41,7 +43,7 @@ class Member(NotificationObserver):
     def view_notifications(self) -> None:
         print(f"\n--- Notifications for {self.name} ---")
         unread_notifications = [n for n in self.notifications if not n.is_read()]
-        
+
         if not unread_notifications:
             print("  No new notifications.")
             return

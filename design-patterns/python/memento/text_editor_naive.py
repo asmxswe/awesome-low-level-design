@@ -1,5 +1,6 @@
 from .text_editor import TextEditor
 
+
 def main():
     # Create editor
     editor = TextEditor()
@@ -15,5 +16,6 @@ def main():
     # No undo functionality available
     print("\nNo undo functionality available in this version")
 
+
 if __name__ == "__main__":
-    main() 
+    main()

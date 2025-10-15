@@ -1,11 +1,9 @@
-from auction_service import AuctionService
-from user import User
-from auction import Auction
-from bid import Bid
-from typing import List
-from decimal import Decimal
-from datetime import datetime, timedelta
 import time
+from datetime import datetime, timedelta
+from decimal import Decimal
+
+from auction_service import AuctionService
+
 
 class AuctionSystemDemo:
     @staticmethod

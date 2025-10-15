@@ -1,7 +1,9 @@
 from datetime import datetime
 from typing import Optional
-from member import Member
+
 from enums import ConnectionStatus
+from member import Member
+
 
 class Connection:
     def __init__(self, from_member: Member, to_member: Member):

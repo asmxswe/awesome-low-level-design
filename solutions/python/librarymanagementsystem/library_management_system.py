@@ -1,10 +1,12 @@
 from typing import Dict, List, Optional
+
+from book_copy import BookCopy
+from item_factory import ItemFactory
+from item_type import ItemType
 from library_item import LibraryItem
 from member import Member
-from book_copy import BookCopy
-from item_type import ItemType
-from item_factory import ItemFactory
 from search_strategy import SearchStrategy
+
 
 class LibraryManagementSystem:
     _instance: Optional['LibraryManagementSystem'] = None
@@ -26,13 +28,13 @@ class LibraryManagementSystem:
         book_copies = []
         item = ItemFactory.create_item(item_type, item_id, title, author)
         self.catalog[item_id] = item
-        
+
         for i in range(num_copies):
             copy_id = f"{item_id}-c{i + 1}"
             book_copy = BookCopy(copy_id, item)
             self.copies[copy_id] = book_copy
             book_copies.append(book_copy)
-        
+
         print(f"Added {num_copies} copies of '{title}'")
         return book_copies
 
@@ -44,7 +46,7 @@ class LibraryManagementSystem:
     def checkout(self, member_id: str, copy_id: str) -> None:
         member = self.members.get(member_id)
         book_copy = self.copies.get(copy_id)
-        
+
         if member is not None and book_copy is not None:
             book_copy.checkout(member)
         else:
@@ -60,7 +62,7 @@ class LibraryManagementSystem:
     def place_hold(self, member_id: str, item_id: str) -> None:
         member = self.members.get(member_id)
         item = self.catalog.get(item_id)
-        
+
         if member is not None and item is not None:
             # Place hold on any copy that is checked out
             for book_copy in item.get_copies():

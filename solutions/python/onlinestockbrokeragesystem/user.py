@@ -1,8 +1,10 @@
 import uuid
+
 from account import Account
+from order import Order
 from stock import Stock
 from stock_observer import StockObserver
-from order import Order
+
 
 class User(StockObserver):
     def __init__(self, name: str, initial_cash: float):
@@ -23,4 +25,5 @@ class User(StockObserver):
         print(f"[Notification for {self.name}] Stock {stock.get_symbol()} price updated to: ${stock.get_price():.2f}")
 
     def order_status_update(self, order: 'Order') -> None:
-        print(f"[Order Notification for {self.name}] Order {order.get_order_id()} for {order.get_stock().get_symbol()} is now {order.get_status().value}.")
+        print(
+            f"[Order Notification for {self.name}] Order {order.get_order_id()} for {order.get_stock().get_symbol()} is now {order.get_status().value}.")

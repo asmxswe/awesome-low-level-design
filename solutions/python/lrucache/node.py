@@ -3,6 +3,7 @@ from typing import TypeVar, Generic, Optional
 K = TypeVar('K')
 V = TypeVar('V')
 
+
 class Node(Generic[K, V]):
     def __init__(self, key: K, value: V):
         self.key = key

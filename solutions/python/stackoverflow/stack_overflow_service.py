@@ -1,12 +1,14 @@
 from typing import Dict, Set, List
-from user import User
-from content import Question
+
 from content import Answer
-from tag import Tag
-from enums import VoteType
-from search_strategy import SearchStrategy
-from reputation_manager import ReputationManager
 from content import Post
+from content import Question
+from enums import VoteType
+from reputation_manager import ReputationManager
+from search_strategy import SearchStrategy
+from tag import Tag
+from user import User
+
 
 class StackOverflowService:
     def __init__(self):
@@ -62,5 +64,5 @@ class StackOverflowService:
             return self.questions[post_id]
         elif post_id in self.answers:
             return self.answers[post_id]
-        
+
         raise KeyError("Post not found")

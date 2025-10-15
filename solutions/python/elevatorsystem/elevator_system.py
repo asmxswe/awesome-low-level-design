@@ -1,11 +1,13 @@
 import threading
 from concurrent.futures import ThreadPoolExecutor
+
 from direction import Direction
+from elevator import Elevator
+from elevator_observer import Display
+from elevator_selection_strategy import NearestElevatorStrategy
 from request import Request
 from request_source import RequestSource
-from elevator_selection_strategy import NearestElevatorStrategy
-from elevator_observer import Display
-from elevator import Elevator
+
 
 class ElevatorSystem:
     _instance = None
@@ -22,10 +24,10 @@ class ElevatorSystem:
     def __init__(self, num_elevators: int):
         if self._initialized:
             return
-        
+
         self.selection_strategy = NearestElevatorStrategy()
         self.executor_service = ThreadPoolExecutor(max_workers=num_elevators)
-        
+
         elevator_list = []
         display = Display()  # Create the observer
 

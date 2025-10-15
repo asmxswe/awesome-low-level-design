@@ -1,11 +1,13 @@
-from typing import List
-import uuid
 import datetime
-from concert import Concert
+import uuid
+from threading import Lock
+from typing import List
+
 from booking import Booking
+from concert import Concert
 from seat import Seat, SeatStatus, SeatNotAvailableException
 from user import User
-from threading import Lock
+
 
 class ConcertTicketBookingSystem:
     _instance = None

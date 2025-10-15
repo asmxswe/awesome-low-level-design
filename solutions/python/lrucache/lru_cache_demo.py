@@ -1,5 +1,6 @@
 from lru_cache import LRUCache
 
+
 class LRUCacheDemo:
     @staticmethod
     def main():
@@ -17,6 +18,7 @@ class LRUCacheDemo:
 
         # Trying to get 'b' should now return None
         print(cache.get("b"))  # None
+
 
 if __name__ == "__main__":
     LRUCacheDemo.main()

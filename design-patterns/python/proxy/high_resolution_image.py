@@ -1,5 +1,7 @@
 import time
+
 from .image import Image
+
 
 class HighResolutionImage(Image):
     def __init__(self, file_name: str):
@@ -19,4 +21,4 @@ class HighResolutionImage(Image):
         # Actual rendering logic would go here
 
     def get_file_name(self) -> str:
-        return self.file_name 
+        return self.file_name

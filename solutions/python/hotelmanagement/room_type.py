@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class RoomType(Enum):
     SINGLE = "SINGLE"
     DOUBLE = "DOUBLE"
