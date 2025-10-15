@@ -11,7 +11,7 @@ def print_account_status(user: User) -> None:
 
 
 class StockBrokerageSystemDemo:
-    def run():
+    def run(self):
         # System Setup
         system = StockBrokerageSystem.get_instance()
 

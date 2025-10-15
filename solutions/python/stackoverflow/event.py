@@ -4,7 +4,7 @@ from enums import EventType
 from user import User
 
 if TYPE_CHECKING:
-    from post import Post
+    from content import Post
 
 
 class Event:

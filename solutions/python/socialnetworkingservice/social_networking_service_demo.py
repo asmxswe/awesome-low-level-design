@@ -16,7 +16,7 @@ def print_feed(feed: List[Post]):
 
 
 class SocialNetworkingServiceDemo:
-    def run():
+    def run(self):
         social_network = SocialNetworkFacade()
 
         print("----------- 1. Creating Users -----------")
